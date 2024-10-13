@@ -1,0 +1,51 @@
+<div class="page-wrapper">
+  <section class="hero-section">
+    <h1>Exercices - Observables</h1>  
+    <button class="cta-button" (click)="nav.navigate('/theorie/14')">🟦 Théorie 🟦</button>
+      <button class="cta-button" (click)="nav.navigate('/demos/14')">🟪 Démonstration 🟪</button>
+  </section>
+    
+  <section class="content-section">
+    <div class="concept">
+      <h2>Exercice - Observable & PokéAPI</h2>
+      <hr>
+      <h3>Contexte :</h3>
+      <p>Créer une petite application permettant de récupérer des informations sur des Pokémons via la PokéAPI. Vous utiliserez HttpClient pour faire des requêtes HTTP et obtenir les données, tout en utilisant des Observables pour gérer la récupération et l'affichage des données de manière asynchrone.</p>
+      <hr>
+      <h3>Objectif :</h3>
+      <ul>
+        <li><p>Créer un service Angular pour interagir avec la PokéAPI.</p></li>
+        <li><p>Utiliser HttpClient pour faire des requêtes GET et obtenir des informations sur des Pokémons.</p></li>
+        <li><p>Afficher une liste de Pokémons dans un composant.</p></li>
+        <li><p>Afficher les détails d'un Pokémon sélectionné dans un autre composant.</p></li>
+        <li><p>Gérer l'état des Pokémon sélectionnés avec un BehaviorSubject pour un affichage réactif.</p></li>
+      </ul>
+      <hr>
+      <h3>Énoncé :</h3>
+      <ul>
+        <li>
+          <p><strong>Créer un service Pokémon (PokeService) :</strong>
+          Ce service va interagir avec la PokéAPI pour récupérer des Pokémons. Il fournira des méthodes pour :</p>
+
+            <ul>
+              <li><p>Obtenir une liste de Pokémon.</p></li>
+              <li><p>Obtenir les détails d'un Pokémon spécifique.</p></li>
+            </ul>
+        </li>
+ 
+
+        <li><p><strong>Composant d'affichage de la liste des Pokémon (PokemonListComponent) :</strong>
+
+          Ce composant affichera la liste des Pokémon récupérés via l'API.
+          Chaque Pokémon pourra être sélectionné pour afficher ses détails.</p></li>
+
+        <li><p><strong>Composant d'affichage des détails d'un Pokémon (PokemonDetailComponent) :</strong>
+
+      Ce composant affichera les détails du Pokémon sélectionné, comme son nom, son type, et ses statistiques.</p></li>
+
+      </ul>
+    </div>
+
+    <app-pokemon-list/>
+  </section>
+</div>

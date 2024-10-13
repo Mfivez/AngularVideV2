@@ -1,0 +1,98 @@
+$primary-color: #3c2880;
+$secondary-color: #2fac67;
+$dark-primary: #3c287f;
+$light-primary: #2fab67;
+$text-color: #fff;
+
+header {
+  background-color: $primary-color;
+  color: $text-color;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  h1 {
+    font-size: 1.8rem;
+    margin: 0;
+    color: $secondary-color;
+  }
+}
+
+nav {
+  ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    padding: 0;
+    margin: 0;
+    
+    li {
+      position: relative;
+      
+      a {
+        color: $text-color;
+        padding: 0.5rem 1rem;
+        transition: background-color 0.3s, color 0.3s;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+
+        &:hover,
+        &.active {
+          background-color: $secondary-color;
+          color: $primary-color;
+          border-radius: 4px;
+        }
+      }
+
+      /* Sous-menu */
+      .submenu {
+        display: none;
+        position: absolute;
+        top: 140%;
+        left: 0;
+        background-color: $dark-primary;
+        padding: 0.5rem 0;
+        border-radius: 4px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+
+        li {
+          padding: 0.5rem 1rem;
+
+          a {
+            color: $text-color;
+            font-size: 0.9rem;
+
+            &:hover {
+              background-color: $secondary-color;
+              color: $primary-color;
+            }
+          }
+        }
+      }
+    }
+
+    .has-submenu:hover .submenu {
+      display: block;
+    }
+  }
+}
+
+.more-menu {
+  background-color: $primary-color;
+  color: $text-color;
+  padding: 0.5rem 1rem;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 4px;
+  margin-top: 1rem;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: $dark-primary;
+  }
+}
+

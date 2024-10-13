@@ -1,0 +1,19 @@
+<div class="concept">
+    <h2>Directives d'attributs : </h2>
+
+    <h3>
+        NgStyle : 
+        <button class="cta-button" (click)="switchItalic()">Italic</button> &nbsp;
+        <button class="cta-button" (click)="switchBold()">Bold</button> &nbsp;
+        <button class="cta-button" (click)="switchSize()">Size</button>
+    </h3>
+    <p [ngStyle]="currentStyle">Bien le bonsoir, je s'appelle Groot !</p>
+
+    <hr>
+
+    <h3>
+        ngClass
+        <button [ngClass]="{ 'cta-button': isActive }"  (click)="switchClass()">Appliquer la classe</button>
+    </h3>
+    
+</div>

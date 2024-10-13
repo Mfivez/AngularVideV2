@@ -1,0 +1,53 @@
+<div class="page-wrapper">
+    <section class="hero-section">
+      <h1>Exercices - HttpClient</h1>  
+      <button class="cta-button" (click)="nav.navigate('/theorie/15')">🟦 Théorie 🟦</button>
+        <button class="cta-button" (click)="nav.navigate('/demos/15')">🟪 Démonstration 🟪</button>
+    </section>
+
+      <section id="concepts" class="content-section">
+          <div class="concept">
+              <h2>Exercice - CRUD avec HttpClient</h2>
+              <hr>
+              <h3>Contexte :</h3>
+              <p>Créer sur cette Url, une mini-app qui interagit avec une API RESTful en effectuant des opérations CRUD. Nous simulerons un système de gestion des utilisateurs où tu pourras :
+                <ul>
+                  <li><p>Récupérer la liste des utilisateurs (GET)</p></li>
+                  <li><p>Ajouter un nouvel utilisateur (POST)</p></li>
+                  <li><p>Mettre à jour un utilisateur existant (PUT)</p></li>
+                  <li><p>Supprimer un utilisateur (DELETE)</p></li>
+                </ul>
+              <p>Pour cet exercice, nous allons utiliser une API de test comme JSONPlaceholder</p>
+              <hr>
+              <h3>Objectifs :</h3>
+              <ul>
+                  <li><p>Utiliser HttpClient pour effectuer des requêtes HTTP.</p></li>
+                  <li><p>Gérer les réponses et erreurs des requêtes.</p></li>
+                  <li><p>Manipuler les données via des formulaires et afficher les résultats à l'écran.</p></li>
+                  <li><p>Appliquer des Observables pour gérer les flux de données asynchrones.</p></li>
+              </ul>
+              <hr>
+              <h3>Enoncé :</h3>
+              <p><strong>1.Configurer le service HttpClient :</strong></p>
+              <ul>
+                <li><p>Crée un service Angular pour interagir avec l'API et implémenter les différentes méthodes HTTP.</p></li>
+              </ul>
+              <p><strong>2. Composant pour afficher les utilisateurs :</strong></p>
+              <ul>
+                <li><p>Un composant Angular pour afficher la liste des utilisateurs récupérés depuis l'API.</p></li>
+              </ul>
+              <p><strong>3. Composant pour ajouter/mettre à jour un utilisateur :</strong></p>
+              <ul>
+                <li><p>Ce composant contiendra un formulaire pour ajouter ou modifier un utilisateur.</p></li>
+              </ul>
+              <p><strong>4. Supprimer un utilisateur :</strong></p>
+              <ul>
+                <li><p>Ajoute un bouton à chaque utilisateur pour le supprimer de la liste via une requête DELETE.</p></li>
+              </ul>
+              <hr>
+              
+          </div>
+
+          <app-user-list/>
+        </section>
+      </div>

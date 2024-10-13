@@ -1,0 +1,14 @@
+<div class="concept">
+    <h2>Attribute Binding - Lier un attribut HTML au Js</h2>
+
+    <p><strong>Valeur : </strong> <input type="number" [(ngModel)]="maVariable"></p>
+    <hr>
+    <p>Etat de B1 : <input type="checkbox" [(ngModel)]="bool"><button class="cta-button" (click)="changeValue()" [disabled]="!bool">B1 : Valeur = 42</button></p>
+    <hr>
+    <p>Ce bouton se désactive quand valeur est plus grande que 5 : <button class="cta-button" (click)="changeValue()" [disabled]="maVariable > 5"> B2 : Valeur = 42</button></p>
+    <hr>
+    <p><strong>RangeValeur : {{ rangeValue }} </strong></p>
+    <input type="range" [max]="max" [min]="min" [(ngModel)]="rangeValue"> [{{ min }} - {{ max }}]
+    <hr>
+    <p><a [href]="url" target="_blank">Vers Google</a></p>
+</div>

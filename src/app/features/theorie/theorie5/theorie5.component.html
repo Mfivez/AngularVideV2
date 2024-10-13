@@ -1,0 +1,105 @@
+<div class="page-wrapper">
+    <section class="hero-section">
+        <h1>Théorie - Binding</h1>
+        <button class="cta-button" (click)="nav.navigate('/theorie/4')"> ⏮️</button>
+      <button class="cta-button" (click)="nav.navigate('/theorie/6')">⏭️</button>
+    </section>
+
+    <section class="content-section">
+
+        <div class="concept">
+            <h2>Contexte :</h2>
+            <p>Nous n'avons, pour le moment, utilisé que la partie HTML et CSS de nos composants Angular. Voyons maintenant, à travers différents moyens, comment utiliser la partie TypeScript pour nous aider dans le développement de notre application !</p>
+        </div>
+
+        <div class="concept">
+            <h2>Objectif :</h2>
+            <p>Utiliser le binding pour intégrer du TypeScript dans la partie HTML de nos composants et automatiser certaines tâches tout en optimisant la gestion de l'interface utilisateur.</p>
+        </div>
+
+        <div class="concept">
+            <h2>Qu'est-ce que le binding ?</h2>
+            <p>
+                Le binding (liaison) en Angular fait référence à la synchronisation des données entre le modèle (TypeScript) et la vue (HTML). Il existe différents types de binding :
+            </p>
+            <ul>
+                <li><strong>Interpolation :</strong> Elle permet d'insérer des expressions TypeScript directement dans le HTML en utilisant les doubles accolades <strong>&#123;&#123;</strong> et <strong>&#125;&#125;</strong>.</li>
+                <li><strong>Property Binding :</strong> Il lie les propriétés du DOM aux propriétés des composants TypeScript à l'aide de crochets <strong>[]</strong>.</li>
+                <li><strong>Event Binding :</strong> Il permet de lier des événements utilisateur (comme un clic) à des méthodes TypeScript en utilisant des parenthèses <strong>()</strong>.</li>
+                <li><strong>Two-way Data Binding :</strong> Il combine les deux et permet une synchronisation bidirectionnelle entre le modèle et la vue via <strong>[(ngModel)]</strong>.</li>
+            </ul>
+        </div>
+
+        <div class="concept">
+            <h2>Rappel : Qu'est-ce que le DOM ?</h2>
+            <p>
+                Le DOM (Document Object Model) est une représentation en mémoire de la structure d'une page web. 
+                Il permet à JavaScript (ou TypeScript) d'interagir avec les éléments HTML et de les manipuler dynamiquement.
+            </p>
+            <p>
+                En Angular, le DOM est souvent modifié à travers le binding, où les changements de données dans les composants peuvent automatiquement se refléter dans l'interface utilisateur sans qu'il soit nécessaire de recharger la page.
+            </p>
+        </div>
+
+        <div class="concept">
+            <h2>Rappel sur la syntaxe TypeScript :</h2>
+            <p>Voici quelques concepts essentiels du TypeScript à garder à l'esprit :</p>
+            <ul>
+                <li><strong>Typage statique :</strong> TypeScript permet de définir des types pour les variables, rendant le code plus sûr.</li>
+                <li><strong>Classes et interfaces :</strong> Permet de mieux organiser et structurer le code.</li>
+                <li><strong>Fonctions fléchées :</strong> Une syntaxe plus concise pour définir des fonctions anonymes, par exemple : <code>() => console.log('Hello World')</code>.</li>
+            </ul>
+        </div>
+
+        <div class="concept">
+            <h2>Exemple : Interpolation</h2>
+            <p>Utilisation d'interpolation pour afficher une donnée dans le HTML :</p>
+            <pre><code><strong>&#123;&#123;</strong> title <strong>&#125;&#125;</strong></code></pre>
+            <p>Dans le fichier TypeScript :</p>
+            <pre><code>title = "Bienvenue sur Angular";</code></pre>
+            <div class="concept demo">
+            <p><strong>Résultat : </strong>{{title}}</p>
+            </div>
+        </div>
+
+        <div class="concept">
+            <h2>Exemple : Property Binding</h2>
+            <p>Utilisation du property binding pour lier une propriété HTML à une variable TypeScript :</p>
+            <pre><code>[src]="imageUrl"</code></pre>
+            <p>Dans le fichier TypeScript :</p>
+            <pre><code>imageUrl = "assets/image.png";</code></pre>
+            <div class="concept demo">
+                <p><strong>Résultat : </strong></p>
+                <img [src]="imageUrl" [alt]="alt"/>
+            </div>
+        </div>
+
+        <div class="concept">
+            <h2>Exemple : Event Binding</h2>
+            <p>Utilisation de l'event binding pour réagir aux événements utilisateur :</p>
+            <pre><code>(click)="handleClick()"</code></pre>
+            <p>Dans le fichier TypeScript :</p>
+            <pre><code>handleClick() &#123; alert("Button clicked!"); &#125;</code></pre>
+            <div class="concept demo">
+                <p><strong>Résultat : <button class="cta-button" (click)="handleClick()">Clique-moi !</button></strong></p>
+            </div>
+        </div>
+
+        <div class="concept">
+            <h2>Exemple : Two-way Data Binding</h2>
+            <p>Synchronisation bidirectionnelle entre l'input utilisateur et le modèle :</p>
+            <pre><code>&lt;input [(ngModel)]="username" /&gt;</code></pre>
+            <p>Dans le fichier TypeScript :</p>
+            <pre><code>username = "";</code></pre>
+            <div class="concept demo">
+                <p><strong>Résultat : <input [(ngModel)]="username"></strong></p>
+                <p><strong>=> </strong>{{username}}</p>
+                <p>❗Il faut importer le <strong>FormsModule</strong> dans votre module pour pouvoir utiliser ce type de binding !</p>
+            </div>
+
+        </div>
+        
+        <button class="cta-button" (click)="nav.navigate('/demos/5')">🟪Démonstration🟪</button>
+    </section>
+</div>
+

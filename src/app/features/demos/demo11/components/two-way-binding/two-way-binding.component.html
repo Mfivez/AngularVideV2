@@ -1,0 +1,38 @@
+<div class="concept">
+    <h2>Formulaire via 2 Way Binding</h2>
+
+    <table>
+    <tr>
+        <td><strong><label for="name">Name :</label></strong></td>
+        <td><input type="text" [(ngModel)]="name"></td>
+    </tr>
+    
+    <tr>
+        <td><strong><label for="email">Email :</label></strong></td>
+        <td><input type="text" [(ngModel)]="email"></td>
+    </tr>
+    
+    <tr>
+        <td><strong><label for="password">Password :</label></strong></td>
+        <td><input class="custom-input" type="password" [(ngModel)]="password"></td>
+    </tr>
+    
+    <tr>
+        <td><strong><label for="gender">Gender :   </label></strong></td>
+        <td>
+        <select class="custom-input" [(ngModel)]="gender">
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+        </select>
+        </td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>
+            @if (name && email && password && gender) {
+                <button class="cta-button" (click)="send()">S'inscrire</button>
+            }
+        </td>
+    </tr>
+    </table>
+</div>

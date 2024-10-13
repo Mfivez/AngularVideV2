@@ -1,0 +1,47 @@
+<div class="page-wrapper">
+    <section class="hero-section">
+      <h1>Démonstration - HttpClient</h1>  
+    </section>
+  
+    <section id="concepts" class="content-section">
+      <div class="concept"> 
+        <h2>HttpClient - Appels HTTP vers serveurs externes</h2>
+
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nom</th>
+            <th>Prix</th>
+            <th>Options</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (p of paginatedProducts; track $index) {
+            <tr>
+              <td>{{ p.id }}</td>
+              <td>{{ p.name }}</td>
+              <td>{{ p.price | currency: 'EUR':'symbol':'1.2-2' }}</td>
+              <td>
+                <button class="cta-button" (click)="delete(p.id)">Delete</button>
+                <button class="cta-button" (click)="openEditForm(p)">Update</button>
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+
+      <div class="pagination-controls">
+        <button class="cta-button" (click)="previousPage()" [disabled]="currentPage === 1">Précédent</button>
+        <span>Page {{ currentPage }} sur {{ totalPages }}</span>
+        <button class="cta-button"  (click)="nextPage()" [disabled]="currentPage === totalPages">Suivant</button>
+      </div>
+
+      <hr>
+      <h3>Crud :</h3>
+      <button class="cta-button" (click)="toggleAddMode()">Add</button>
+
+      </div>
+      <button class="cta-button" (click)="nav.navigate('/exos/12')">🟩 Exercices 🟩</button>
+    </section>
+  </div>

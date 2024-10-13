@@ -1,0 +1,23 @@
+<div class="concept">
+    <h2>Etape 6 : Ajustement des imports dans les modules</h2>
+    <p>Puisque le lazy loading est déjà configuré dans notre module de routage, nous n'avons plus besoin d'importer manuellement les modules enfants (<code>HomeModule</code>, <code>ExercicesModule</code>, et <code>DemosModule</code>) dans notre module <code>FeaturesModule</code>.</p>
+    <p>L'idée étant que les modules seront chargés automatiquement lorsqu'ils seront requis via le routing, ce qui évite de les dupliquer dans les imports.</p>
+    <p>Il faut donc ajuster nos différents modules en conséquence, exemple avec <code>FeaturesModule</code> :</p>
+    <pre><code>
+      &#64;NgModule(&lbrace;
+      declarations: [],
+      imports: [
+          CommonModule,
+          FeaturesRoutingModule, 
+          // Le module de routing charge déjà les modules Home, 
+          // Exercices et Demos via lazy loading
+      ],
+      exports: [
+          // Les modules enfants n'ont plus besoin d'être exportés 
+          // car le routing les charge dynamiquement
+      ]
+      &rbrace;)
+      export class FeaturesModule &lbrace; &rbrace;
+    </code></pre>
+    <p>En supprimant les imports et exports des modules enfants (<code>HomeModule</code>, <code>ExercicesModule</code>, <code>DemosModule</code>), on évite des chargements redondants, optimisant ainsi l'application.</p>
+  </div>

@@ -1,0 +1,10 @@
+<div class="concept">
+    <h2>SessionStorage : Non-Persistant à la fermeture du navigateur</h2>
+
+    <input class="custom-input" [(ngModel)]="usernameSession" placeholder="Enter your username">
+    <button class="cta-button" (click)="saveSession()">Save</button>
+    <button class="cta-button" (click)="loadSession()">Load</button>
+    <button class="cta-button" (click)="removeSession()">Remove a key</button>
+    <button class="cta-button" (click)="clearSession()">Clear</button>
+    <p>Username: <strong>{{ savedUsernameSession }}</strong></p>
+</div>

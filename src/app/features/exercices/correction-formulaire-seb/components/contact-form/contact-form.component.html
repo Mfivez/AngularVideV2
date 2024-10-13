@@ -1,0 +1,73 @@
+<div class="concept form-container">
+    <h3>Correction : Formulaire de contact</h3>
+  
+    <form [formGroup]="contactForm">
+      
+      @for (field of formFields; track $index) {
+
+        @if(field.controlName !== "address" && field.controlName !== "rdvDates") {
+            <div class="form-group">
+                <label [for]="field.controlName"><strong>{{ field.label }}</strong></label>
+  
+                <span>
+                    @if (field.inputType?.type !== 'checkbox' && field.inputType?.type !== 'textarea') {
+                      <input [type]="field.type"
+                             class="custom-input"
+                             [formControlName]="field.controlName"
+                             [ngClass]="{ error: isInvalid(field.controlName) }" />
+                    }
+              
+                    @if (field.inputType?.type === 'textarea') {
+                      <textarea class="custom-input"
+                                [formControlName]="field.controlName"
+                                [ngClass]="{ error: isInvalid(field.controlName) }">
+                      </textarea>
+                    }
+              
+                    @if (field.inputType?.type === 'checkbox') {
+                      <input type="checkbox" 
+                             [formControlName]="field.controlName" 
+                             (change)="updateAddressVisibility()" />
+                    }
+              
+                    @if (isInvalid(field.controlName)) {
+                      <span class="error">{{ field.validatorMessage }}</span>
+                    }
+                  </span>
+                </div>
+            }
+    
+          @if (field.controlName === 'address' && isAddressVisible()) {
+            <div class="form-group">
+              <label for="address"><strong>{{ field.label }}</strong></label>
+              <input type="text"
+                     formControlName="address"
+                     class="custom-input"
+                     [ngClass]="{ error: isInvalid('address') }" />
+    
+              @if (isInvalid('address')) {
+                <span class="error">{{ field.validatorMessage }}</span>
+              }
+            </div>
+          }
+        }
+
+        <button type="cta-button" (click)="addRdvDate()" class="cta-button">Ajouter une date de RDV</button>
+        <br><br>
+        <div formArrayName="rdvDates">
+          @for (dateControl of rdvDates.controls; track $index) {
+            <div [formGroupName]="$index" class="form-group">
+                <label for="rdvDate{{ $index }}"><strong>Date proposée {{ $index + 1 }} : </strong></label>
+                <input type="date" formControlName="date" class="custom-input" [ngClass]="{ error: isDateInvalid($index) }" />
+
+                @if (isDateInvalid($index)) {
+                    <span class="error">⚠️ Date invalide. 7 jours en plus requis.</span>
+                  }
+                </div>
+        }
+    </div>
+      
+      <br>
+      <button class="cta-button" (click)="onSubmit()" [disabled]="!contactForm.valid">Envoyer</button>
+    </form>
+  </div>

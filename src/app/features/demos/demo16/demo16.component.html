@@ -1,0 +1,18 @@
+<div class="page-wrapper">
+    <section class="hero-section">
+      <h1>Démonstration - Interceptor</h1>  
+    </section>
+  
+    <section id="concepts" class="content-section">
+        <div class="concept">
+          <h2>Interceptor - Intercepter une requête & y ajouter un token</h2>
+          <button class="cta-button" (click)="storeToken()">Store Token</button>
+          <button class="cta-button" (click)="makeRequest()">Make Request</button>
+
+          @if (response) {
+            <p><strong>Réponse :</strong> {{ response | json }}</p>
+          }
+        </div>
+        <button class="cta-button" (click)="nav.navigate('/exos/13')">🟩 Exercices 🟩</button>
+    </section>
+  </div>

@@ -1,0 +1,19 @@
+<div class="page-wrapper">
+    <section class="hero-section">
+      <h1>Théorie - Composants Angular</h1>
+      <button class="cta-button" (click)="nav.navigate('/theorie/1')"> ⏮️</button>
+      <button class="cta-button" (click)="nav.navigate('/theorie/3')">⏭️</button>
+    </section>
+
+    <section id="concepts" class="content-section">
+
+            <app-context/>
+
+            <app-goal/>
+
+            <app-steps/>
+
+            <button class="cta-button" (click)="nav.navigate('/exos/1')">🟩 Exercices 🟩</button>
+
+    </section>
+</div>

@@ -1,0 +1,54 @@
+<div class="concept">
+    <h2>Etape 1 : Mise en place du routing principal</h2>
+    <p>Si vous vous rappelez du cheminement mis en place pour arriver jusqu'ici, je vous avais demandé de mettre en place pour plusieurs modules créés un <code>moduleName-routing.module.ts</code>.</p>
+    <p>En voici la liste récapitulative :</p>
+    <ul>
+      <li><p><strong>1. </strong>demos-routing.module.ts</p></li>
+      <li><p><strong>2. </strong>exercices-routing.module.ts</p></li>
+      <li><p><strong>3. </strong>home-routing.module.ts</p></li>
+      <li><p><strong>4. </strong>features-routing.module.ts</p></li>
+      <li><p><strong>5. </strong>app-routing.module.ts</p></li>
+    </ul>
+    <p>Ces modules ont une relation hiérarchique quant à leur ordre d'exécution.</p>
+    <ul>
+      <li><p><strong>1. </strong>Je rentre par le point d'entrée (app).</p></li>
+      <li><p><strong>2. </strong>Je passe par le module features.</p></li>
+      <li><p><strong>3. </strong>J'accède à l'une de ces features.</p></li>
+    </ul>
+    <p>Nous allons donc attaquer la mise en place du routing en suivant ce pattern.</p>
+    <p>Dans le module <code>app-routing.module.ts</code> :</p>
+    <p>C'est depuis cet endroit que nous allons créer notre 1ère route. Si nous suivons notre pattern, nous savons que nous devons faire le routing du module app vers le module features.</p>
+    <p>C'est dans la liste de routes que nous allons définir cette relation :</p>
+    
+    <pre><code>
+      import &lbrace; NgModule &rbrace; from '&#64;angular/core';
+      import &lbrace; RouterModule, Routes &rbrace; from '&#64;angular/router';
+
+      const routes: Routes = [
+      &lbrace; path: '', loadChildren: () => 
+        import('../features/features.module').then(
+          module => module.FeaturesModule) &rbrace;
+      ];
+
+      &#64;NgModule(&lbrace;
+      imports: [RouterModule.forRoot(routes)],
+      exports: [RouterModule]
+      &rbrace;)
+      export class AppRoutingModule &lbrace; &rbrace;
+    </code></pre>
+
+    <p>Ce que nous spécifions via cette ligne c'est ceci :</p>
+
+    <ul>
+      <li>AppRouting, sache qu'il existe un module dans l'architecture du projet qui se trouve dans le fichier situé dans :</li>
+      <pre><code>() => import('../features/features.module')</code></pre>
+      <li>Dans ce fichier, ce module se nomme (nom de la classe déclaré dans le fichier module.ts) :</li>
+      <pre><code>.then(module => module.FeaturesModule)</code></pre>
+      <li>Et bien pour ce module, tu vas me charger les enfants, c'est-à-dire les modules déclarés dans la catégorie : Export :</li>
+      <pre><code>=> loadChildren:</code></pre>
+      <li>Toutes les routes et les modules que tu obtiendras via le loadChildren, tu les lieras au chemin '' :</li>
+      <pre><code>path: ''</code></pre>
+      <li>Ce que va faire <code>path: ''</code>, c'est venir rajouter à notre url qui est <code>http://localhost:4200</code>, la valeur '' donc on obtient => <code>http://localhost:4200</code>.</li>
+    </ul>
+
+  </div>

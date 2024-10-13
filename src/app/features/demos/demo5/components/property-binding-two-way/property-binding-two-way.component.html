@@ -1,0 +1,24 @@
+<div class="concept">
+    <h2>Property Binding (Two-Way) - Récupérer & Mettre à jour une valeur Ts depuis l'HTML</h2>
+
+    <p class="warning">⚠️ Importer le FormsModule !</p>
+
+    <h3>Chaîne de caractères :</h3>
+
+    <p><strong>Valeur :</strong> {{ maVariable1 }}</p>
+    <p>Lors de l'écriture :</p>
+    <p><input type="text" [(ngModel)]="maVariable1"></p>
+
+    <p>Lors du relâchement du clavier :</p>
+    <p><input type="text" [value]="maVariable1" (keyup)="changeValue($event)"></p>
+
+    <h3>Nombre :</h3>
+
+    <p>Valeur : {{ maVariable2 }}</p>
+    <input type="number" [(ngModel)]="maVariable2">
+
+    <h3>Booléen :</h3>
+    
+    <p>Valeur : <input type="checkbox" [(ngModel)]="maVariable3">{{ maVariable3 }} </p>
+    
+</div>

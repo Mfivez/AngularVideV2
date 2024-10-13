@@ -1,0 +1,20 @@
+<div class="concept">
+    <h2>Resolver - Eviter les données incomplètes</h2>
+
+    <p>
+        <a routerLink="/demos/12/1"><button class="cta-button">Utilisateur id 1</button></a>
+        <a routerLink="/demos/12/2"><button class="cta-button">Utilisateur id 2</button></a>
+        <a routerLink="/demos/12/3"><button class="cta-button">Utilisateur id 3</button></a>
+        <a routerLink="/demos/12/4"><button class="cta-button">Utilisateur id 4</button></a> 
+    </p>
+    <hr>
+    
+    
+    <h2>Détails sur l'utilisateur actuel :</h2>
+    @if (user) {
+        <p>Nom: <strong>{{ user.nom }}</strong></p>
+        <p>Prénom: <strong>{{ user.prenom }}</strong></p>
+    } @else {
+        <p class="warning">Aucun utilisateur connecté !</p>
+    }
+</div>

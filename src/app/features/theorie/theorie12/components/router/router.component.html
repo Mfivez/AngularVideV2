@@ -1,0 +1,71 @@
+<div class="concept"> 
+    <h2>La classe Router</h2>
+    <p><strong>Résumé :</strong> La classe <code>Router</code> permet de gérer la navigation entre les différentes pages (ou composants) d'une application Angular. Elle lie une URL à un composant spécifique, permettant ainsi d'afficher des contenus variés en fonction de l'adresse visitée.</p>
+
+</div>
+<br>
+<div class="concept">
+    <h2>Router - Concepts Clés</h2>
+    <br/><hr>
+    
+    <h3>1. Les routes : Rappel</h3>
+    <p>Une route, c'est une association entre un chemin d'URL et un composant. Lorsqu'un utilisateur accède à une URL spécifique, le Router charge le composant correspondant et l'affiche dans la page.</p>
+
+    <p><strong>Routes simples :</strong></p>
+    <img [src]="imageUrl">
+    <br>
+
+    <br><hr>
+
+    <h3>2. Le RouterModule : Rappel</h3>
+    <p>Pour que le routing fonctionne, il faut utiliser le RouterModule dans notre application. Il permet de configurer les routes et d'ajouter des outils pour naviguer entre les composants.</p>
+
+    <p><strong>Exemple :</strong></p>
+    <img [src]="imageUrl2"><br>
+    <p>
+    le forRoot() indique que ce module de routing est le principal pour l'application.</p>
+
+    <br><hr>
+
+    <h3>3. Navigation avec le Router</h3>
+    <p>Le Router d'Angular offre plusieurs façons de naviguer entre les pages</p>
+    <hr>
+    <p><strong>1. Navigation simple</strong></p>
+    <p>Pour naviguer vers une nouvelle page, on peut utiliser la méthode navigate du Router.</p>
+
+    <p><strong>Exemple :</strong></p>
+    <img [src]="imageUrl3"><br>
+    <p class="warning">⚠️ Notez que même si votre module ne connait pas l'URL, la méthode navigate vous renverra sur la route cible, ce qui peut, parfois, s'avérer être assez pratique !</p>
+
+    <hr>
+
+    <p><strong>2. Navigation avec paramètres</strong></p>
+    <p>Les paramètres sont des informations supplémentaires passées dans l'URL.</p>
+
+    <p><strong>Exemple :</strong></p>
+    <img [src]="imageUrl4"><br>
+
+    <p class="warning">
+        ❗ N'oubliez pas de créer une route avec un paramètre id pour utiliser votre élément :
+        <img [src]="imageUrl7">
+    </p>
+
+    <hr>
+
+    <p><strong>3. Récupérer des paramètres de route</strong></p>
+    <p>Quand vous naviguez vers une route qui contient des paramètres, vous devez les récupérer dans le composant pour les utiliser.</p>
+
+    <p><strong>Exemple :</strong></p>
+    <img [src]="imageUrl5"><br>
+
+    <hr>
+
+    <p><strong>4. Paramètres de requête</strong></p>
+    <p>Les query params sont des paramètres supplémentaires ajoutés dans l'URL après un <code>?</code>. Ils sont utilisés pour des filtres, des recherches ou des informations contextuelles.</p>
+
+
+    <p><strong>Exemple : </strong></p>
+    <img [src]="imageUrl6"><br/>
+    <p class="warning">💡Pour récupérer les paramètres de requête, la méthodologie est la même que pour ceux de route, si ce n'est qu'on passe par .queryParams["key"] au lieu de params["key"].</p>
+
+</div>

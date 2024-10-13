@@ -1,0 +1,43 @@
+<div class="page-wrapper">
+    <section class="hero-section">
+      <h1>Exercices - Storages</h1>  
+      <button class="cta-button" (click)="nav.navigate('/theorie/13')">🟦 Théorie 🟦</button>
+        <button class="cta-button" (click)="nav.navigate('/demos/13')">🟪 Démonstration 🟪</button>
+    </section>
+  
+    <section id="concepts" class="content-section">
+        <div class="concept">
+            <h2>Exercice - Gestion de session Utilisateur</h2>
+            <hr>
+            <h3>Contexte :</h3>
+            <p>Créer sur cette Url, une mini-app qui permet à un utilisateur de se connecter, de rester connecté sur la page, et d'enregistrer quelques informations de manière basique et persistante ou temporaire.</p>
+            <p>L'utilisateur doit aussi pouvoir se déconnecter et effacer ses données.</p>
+            <hr>
+            <h3>Objectifs :</h3>
+            <ul>
+                <li><p>Stockez de manière persistante un pseudo</p></li>
+                <li><p>Stockez de manière temporaire un message de bienvenue qui ne s'affichera que lors de la connexion.</p></li>
+                <li><p>Implémenter les actions de connexion et d'affichages.</p></li>
+            </ul>
+            <hr>
+            <h3>Enoncé :</h3>
+            <p>1. Créer un composant de connexion avec un formulaire pour saisir un pseudo qui sera alors enregistré au même titre que le message de bienvenue.</p>
+            <p>2. Affichez le pseudo de l'utilisateur enregistré et, s'il est encore présent, le message de bienvenue. Affichez également un bouton de déconnexion qui supprimera toutes les données sauvegardées.</p>
+            <hr>
+            <p class="warning">⚠️ Tout ce qui est lié aux storages devra être mis en place dans un service spécifique et non dans le ts d'un composant.</p>
+        </div>
+
+        <div class="concept">
+            <h2>Correction : </h2>
+            @if (pseudo) {
+                <h3>Bonjour {{ pseudo }} !</h3>
+                @if (welcomeMessage) {
+                    <p> {{ welcomeMessage }}</p>
+                }
+                <button class="cta-button" (click)="logout()">🟥 Se déconnecter</button>
+            }
+
+            @if (!pseudo) {
+                <p class="warning">Vous n'êtes pas connecté, veuillez-vous  <a (click)="nav.navigate('/exos/10/login')">identifier</a> ❗</p>
+            }
+        </div>

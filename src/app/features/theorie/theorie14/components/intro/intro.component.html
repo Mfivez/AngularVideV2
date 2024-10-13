@@ -1,0 +1,172 @@
+<div class="concept"> 
+    <h2>Observables : Un flux de données asynchrone</h2> 
+    <p>Un <strong>Observable</strong> est un objet qui émet des données au fil du temps. Contrairement aux promesses, qui ne renvoient qu'une seule valeur, un Observable peut émettre plusieurs valeurs (ou aucune) au fil du temps.</p>
+
+    <p>Les Observables sont donc des objets utilisés pour gérer des flux de données asynchrones. Ils sont très utilisés en Angular, notamment pour les événements utilisateur, les appels HTTP, et bien plus encore.</p>
+</div>
+
+<br><br>
+
+<div class="concept"> 
+    <h2>Qu'est-ce que le pattern Observer ?</h2> 
+
+    <p>Les <strong>Observables</strong> suivent le pattern Observer. Dans ce pattern, un Observable (la source) émet des notifications, et un ou plusieurs Observers (les observateurs) "souscrivent" pour écouter et réagir à ces notifications.</p>
+    <hr>
+    <h3>Concepts clés :</h3>
+    <ul>
+        <li><p><strong>Observable :</strong> La source des données, qui émet des notifications.</p></li>
+        <li><p><strong>Observer :</strong> L'entité qui écoute et réagit aux données émises par l'Observable.</p></li>
+        <li><p><strong>Subscription :</strong> L'acte de s'abonner à un Observable pour recevoir ses notifications.</p></li>
+    </ul>
+    <hr>
+    <h3>Illustration :</h3>
+    <p><strong> Observable :</strong></p>
+    <img [src]="imageUrl1"><br>
+    <p>Ici, le service joue le rôle d'Observable, qui émet des événements à chaque fois que le statut de connexion change (connexion/déconnexion).</p>
+
+    <p>Ce service propose 2 Subjects :</p>
+    <ul>
+        <li><p><strong>Subject boolean :</strong> Un sujet qui ne garde pas d'état initial et commence à émettre des événements uniquement lorsque quelqu'un s'abonne.
+        </p></li>
+        <li><p><strong>BehaviorSubject boolean :</strong> Un sujet spécial qui stocke l'état actuel (ici, le statut de connexion) et émet immédiatement la dernière valeur stockée à chaque nouvel abonné.</p></li>
+    </ul>
+    <hr>
+    <p><strong> Observer & Abonnement:</strong></p>
+    <img [src]="imageUrl2"><br>
+    <p>Le composant, quant à lui, joue le rôle d'Observer. Il s'abonne à statusSubject$ dans le service AuthService pour écouter les changements d'état de la connexion.</p>
+    <ul>
+        <li><p><code>ngOnInit() : </code>Lors de l'initialisation du composant, on s'abonne à statusSubject$ pour réagir aux changements de statut de connexion.</p></li>
+        <li><p><code>login() et logout() :</code>Ces méthodes invoquent les méthodes correspondantes du service, ce qui déclenche les notifications via les observables.</p></li>
+    </ul>     
+</div>
+
+<br><br>
+
+<div class="concept"> 
+    <h2>Création d'un Observable</h2> 
+
+    <p>Pour créer un Observable, vous utilisez la classe <code>Observable</code> de la bibliothèque <code>rxjs</code>. Vous pouvez ensuite émettre des valeurs à travers cet Observable.</p>
+
+    <h3>Exemple basique :</h3>
+
+    <p>Voici un exemple de création d'un Observable qui émet trois valeurs puis se termine :</p>
+    <img [src]="imageUrl3">
+    <hr>
+    <h3>Résultat attendu :</h3>
+    <ul>
+        <li><p>Valeur reçue : 1</p></li>
+        <li><p>Valeur reçue : 2</p></li>
+        <li><p>Valeur reçue : 3</p></li>
+        <li><p>Observable terminé.</p></li>
+    </ul>
+</div> 
+
+<br><br>
+
+<div class="concept"> 
+    <h2>Le rôle de l'Observer</h2> 
+    
+    <p class="warning">Lorsqu'un Observable est créé, il ne commence à émettre des valeurs que lorsqu'un Observer s'y abonne. </p>
+    <hr>
+    <h3>L'Observer a trois méthodes 
+        principales :</h3>
+
+     <ul> 
+        <li><p><code>next(value)</code> : Réagit aux nouvelles valeurs émises par l'Observable.</p></li> <li><p><code>error(err)</code> : Réagit aux erreurs éventuelles rencontrées.</p></li> <li><p><code>complete()</code> : Est appelé lorsque l'Observable a terminé d'émettre des valeurs.</p></li> 
+    </ul>
+
+    <hr>
+
+    <h3>Illustration d'un Observer :</h3>
+    <img [src]="imageUrl4"><br>
+</div>
+
+<br><br>
+
+<div class="concept"> 
+    <h2>Souscription à un Observable</h2> 
+
+    <p>Une fois un Observable créé, il est inactif tant qu'il n'y a pas d'abonné (Observer). Lorsqu'un Observer s'abonne, il commence à recevoir les valeurs émises par l'Observable.</p>
+
+    <hr>
+
+    <h3>Illustration de souscription :</h3>
+    <img [src]="imageUrl5"><br>
+
+</div> 
+
+<br><br>
+
+<div class="concept"> 
+    <h2>Le rôle de la méthode subscribe()</h2> 
+    
+    <p>La méthode <code>subscribe()</code> permet de s'abonner à un Observable. Elle prend trois paramètres facultatifs pour gérer les données, les erreurs, et la fin du flux de données :</p> 
+    <ul> 
+        <li><p><code>next(value)</code> : Exécute un code lorsqu'une nouvelle donnée est reçue.</p></li> 
+        <li><p><code>error(err)</code> : Exécute un code lorsqu'une erreur est rencontrée.</p></li> 
+        <li><p><code>complete()</code> : Exécute un code lorsque l'Observable a terminé d'émettre.</p></li> 
+    </ul>
+</div>
+
+<br><br>
+
+<div class="concept"> 
+    <h2>Les opérateurs d'Observables</h2>
+    
+    <p>Les <strong>opérateurs</strong> sont des fonctions qui permettent de transformer, filtrer, ou combiner les données d'un Observable. Ils sont un aspect essentiel de la manipulation des flux de données en RxJS.</p>
+
+    <hr>
+
+    <h3>Quelques opérateurs courants :</h3>
+
+    <ul>
+        <li><p><code>map()</code> : Transforme chaque valeur émise par l'Observable.</p></li>
+        <li><p><code>filter()</code> : Ne laisse passer que les valeurs qui répondent à une condition.</p></li>
+        <li><p><code>mergeMap()</code> : Combine plusieurs Observables.</p></li>
+        <li><p><code>take()</code> : Limite le nombre de valeurs émises.</p></li>
+    </ul>
+
+    <hr>
+
+    <h3>Exemple :</h3>
+    <img [src]="imageUrl6"><br>
+
+</div> 
+
+<br><br>
+
+<div class="concept"> 
+    <h2>Observable vs Promise</h2> 
+
+    <p>Les <strong>Promises</strong> et les <strong>Observables</strong> sont tous deux utilisés pour gérer des opérations asynchrones, mais ils ont des différences clés :</p>
+    <ul>
+        <li><p><strong>Promise</strong> : Renvoie une seule valeur ou une erreur.</p></li>
+        <li><p><strong>Observable</strong> : Peut émettre plusieurs valeurs (ou aucune) sur une période donnée.</p></li>
+        <li><p>Un Observable est <strong>paresseux</strong> (lazy), il ne démarre que lorsqu'un Observer s'y abonne, tandis qu'une Promise démarre immédiatement.</p></li>
+    </ul>
+
+    <hr>
+
+    <h3>Quand utiliser un Observable ou une Promise ?</h3>
+    <ul>
+        <li><p>Utilisez une <strong>Promise</strong> pour des opérations asynchrones simples qui n'ont qu'une seule réponse (comme une requête HTTP unique).</p></li>
+        <li><p>Utilisez un <strong>Observable</strong> pour des flux de données continus ou lorsque plusieurs valeurs doivent être émises (comme des événements utilisateur ou des WebSockets).</p></li>
+    </ul>
+    </div>
+
+<br><br>
+
+<div class="concept"> 
+    <h2>Gestion des erreurs</h2> 
+    
+    <p>Les <strong>Observables</strong> permettent une gestion efficace des erreurs grâce à la méthode <code>error()</code> dans l'observer, qui est déclenchée lorsqu'une erreur survient pendant l'émission des données.</p>
+
+    <h3>Exemple :</h3>
+    <ul>
+        <li><p>Si un Observable émet une erreur, la méthode <code>error()</code> est appelée.</p></li>
+
+        <li><p>Après une erreur, l'Observable cesse d'émettre des données.</p></li>
+    </ul>
+
+    <p><strong>Astuce :</strong> Vous pouvez également utiliser des opérateurs comme <code>catchError()</code> pour capturer et gérer les erreurs au sein d'un flux Observable.</p>
+</div>

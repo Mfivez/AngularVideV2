@@ -1,0 +1,96 @@
+<div class="page-wrapper">
+    <section class="hero-section">
+        <h1>Théorie - Composants : Cycles de vies </h1>
+        <button class="cta-button" (click)="nav.navigate('/theorie/7')"> ⏮️</button>
+      <button class="cta-button" (click)="nav.navigate('/theorie/9')">⏭️</button>
+    </section>
+
+    <section class="content-section">
+        <div class="concept">
+            <h2>Contexte :</h2>
+            <p>Dans Angular, chaque composant traverse une série d'étapes de cycle de vie, de sa création à sa destruction.
+                 Angular propose des hooks spécifiques pour intercepter ces étapes et exécuter du code en conséquence.</p>
+        </div>
+
+        <div class="concept">
+            <h2>Objectif :</h2>
+            <p>Maîtriser les hooks de cycle de vie pour répondre à différents besoins, tels que l'initialisation du composant, 
+                la gestion des changements ou encore la libération de ressources avant la destruction du composant.</p>
+        </div>
+
+        <div class="concept">
+            <h2>Qu'est-ce qu'un hook de cycle de vie ?</h2>
+            <p>
+                Un <strong>hook de cycle de vie</strong> est une méthode fournie par Angular que vous pouvez implémenter dans vos composants 
+                pour exécuter du code à des moments précis du cycle de vie d'un composant. Voici un aperçu des différents hooks disponibles :
+            </p>
+        </div>
+
+        <div class="concept">
+            <h2>1. Le hook <code>ngOnChanges</code></h2>
+            <p><strong>Quand est-il appelé ?</strong></p>
+            <p>Ce hook est appelé à chaque fois qu'une propriété liée au composant change.</p>
+            <p><strong>Utilité :</strong> Il permet de réagir aux changements de valeurs des entrées (inputs) d’un composant.</p>
+            <img [src]="ngOnChangesUrl">
+            <p>🔍 Ce hook reçoit un objet <code>SimpleChanges</code> qui contient les anciennes et nouvelles valeurs des propriétés liées.</p>
+        </div>
+
+        <div class="concept">
+            <h2>2. Le hook <code>ngOnInit</code></h2>
+            <p><strong>Quand est-il appelé ?</strong></p>
+            <p>Ce hook est appelé une seule fois, immédiatement après la première liaison des données au composant.</p>
+            <img [src]="ngOnInitUrl">
+            <p><strong>Utilité :</strong> Utilisé pour effectuer des initialisations comme la récupération de données ou la configuration d'un état initial.</p>
+        </div>
+
+        <div class="concept">
+            <h2>3. Le hook <code>ngDoCheck</code></h2>
+            <p><strong>Quand est-il appelé ?</strong></p>
+            <p>Ce hook est appelé à chaque cycle de détection des changements d'Angular.</p>
+            <img [src]="ngdoCheckUrl">
+            <p><strong>Utilité :</strong> Il permet de détecter les changements manuellement, par exemple, si vous avez besoin d'une logique plus fine pour vérifier certains changements non détectés par Angular.</p>
+        </div>
+
+        <div class="concept">
+            <h2>4. Le hook <code>ngAfterContentInit</code></h2>
+            <p><strong>Quand est-il appelé ?</strong></p>
+            <p>Ce hook est appelé une seule fois après qu'Angular ait projeté le contenu externe dans le composant.</p>
+            <img [src]="ngAfterContentInitUrl">
+            <p><strong>Utilité :</strong> Il est utilisé lorsque vous devez interagir avec le contenu projeté dans un composant (contenu d'un autre composant inséré via <code>ng-content</code>).</p>
+        </div>
+
+        <div class="concept">
+            <h2>5. Le hook <code>ngAfterContentChecked</code></h2>
+            <p><strong>Quand est-il appelé ?</strong></p>
+            <p>Ce hook est appelé après chaque vérification du contenu projeté dans le composant.</p>
+            <img [src]="ngAfterContentCheckedUrl">
+            <p><strong>Utilité :</strong> Utilisé pour effectuer des actions après chaque cycle de vérification du contenu projeté dans le composant.</p>
+        </div>
+
+        <div class="concept">
+            <h2>6. Le hook <code>ngAfterViewInit</code></h2>
+            <p><strong>Quand est-il appelé ?</strong></p>
+            <p>Ce hook est appelé une seule fois après qu'Angular a initialisé les vues du composant et de ses enfants.</p>
+            <img [src]="ngAfterContentInitUrl">
+            <p><strong>Utilité :</strong> Il est utile pour interagir avec des éléments de la vue après leur initialisation.</p>
+        </div>
+
+        <div class="concept">
+            <h2>7. Le hook <code>ngAfterViewChecked</code></h2>
+            <p><strong>Quand est-il appelé ?</strong></p>
+            <p>Ce hook est appelé après chaque vérification des vues du composant et de ses enfants.</p>
+            <img [src]="ngAfterViewCheckedUrl">
+            <p><strong>Utilité :</strong> Utilisé pour effectuer des actions après chaque cycle de vérification des vues du composant.</p>
+        </div>
+
+        <div class="concept">
+            <h2>8. Le hook <code>ngOnDestroy</code></h2>
+            <p><strong>Quand est-il appelé ?</strong></p>
+            <p>Ce hook est appelé juste avant que le composant soit détruit, par exemple lors de la navigation vers une autre page.</p>
+            <img [src]="ngOnDestroyUrl">
+            <p><strong>Utilité :</strong> Utilisé pour nettoyer les ressources (désabonnement aux observables, arrêt de timers, etc.).</p>
+        </div>
+
+        <button class="cta-button" (click)="nav.navigate('/demos/8')">🟪Démonstration🟪</button>
+    </section>
+</div>

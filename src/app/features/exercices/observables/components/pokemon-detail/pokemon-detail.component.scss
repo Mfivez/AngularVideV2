@@ -1,0 +1,19 @@
+.hero-section {
+  padding: 20px;
+}
+
+.pokemon-details {
+  display: flex;             
+  align-items: center; 
+  gap: 20px; 
+}
+
+.pokemon-image img {
+  width: 300px; 
+  height: auto;
+}
+
+.pokemon-info {
+  display: flex;
+  flex-direction: column; 
+}

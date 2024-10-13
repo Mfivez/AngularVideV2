@@ -1,0 +1,46 @@
+<div class="concept form-container">
+    <h3>Formulaire via Validators</h3>
+
+    <form  [formGroup]="myForm">
+        @for (field of formFields; track $index) {
+            <div class="form-group">
+                <label [for]="field.controlName"><strong>{{ field.label }}</strong></label>
+                
+                <span>
+                    @if (myForm.controls[field.controlName].valid) {✅}
+                    @if (field.inputType?.type == "selector") {
+                        <select class="custom-input" [formControlName]="field.controlName"  [ngClass]="{error: myForm.controls[field.controlName].touched && !myForm.controls[field.controlName].valid}">
+                        @for (option of field.inputType?.params; track $index) {
+                            <option [value]="option">{{option}}</option>
+                        }
+                        </select>
+                    } @else {
+                        <input class="custom-input" [type]="field.type"  [formControlName]="field.controlName" [ngClass]="{ 
+                        error : myForm.controls[field.controlName].touched && !myForm.controls[field.controlName].valid }">
+                    }
+                    
+                </span>
+                @if (myForm.controls[field.controlName].touched && !myForm.controls[field.controlName].valid) {<span class="error">{{field.validatorMessage}}</span>}
+                </div>
+        }
+
+
+        <div class="form-group">
+            <button class="cta-button" (click)="sendFG()" [disabled]="!myForm.valid">S'inscrire</button>
+        </div>
+        
+        <hr>
+
+        <h3>Form Control (abstractControl) : Etat global du formulaire :</h3>
+        <p><strong>Le formulaire :</strong></p>
+            <ul>
+                @if (myForm.pristine) {<li><p>n'a pas subi la moindre modification de l'utilisateur.✅</p></li>}
+                @if (myForm.touched) {<li><p>a été touché par l'utilisateur! ✅</p></li>}
+                @if (myForm.invalid) {<li><p>possède un attribut invalide! 🟥</p></li>}
+                @if (myForm.valid) {<li><p>est totalement valide! ✅</p></li>}
+            </ul>
+    </form>
+
+</div>
+
+<!--Pristine = immaculé => le formulaire global n'a pas été modifié-->

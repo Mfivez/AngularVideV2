@@ -1,0 +1,16 @@
+<div class="concept">
+    <h2>Les Guards - Gardiens des routes</h2>
+
+    @if (!isConnected) {
+        <p><strong>🟥 : déconnecté</strong></p>
+        <button class="cta-button" (click)="login()">Login</button>
+    } @else {
+        <p><strong>🟩 : connecté</strong></p>
+        <button class="cta-button" (click)="logout()">Logout</button>
+    }
+
+    <p>
+        <a routerLink="/demos/12/1">Se rendre sur la page Guard</a>
+    </p>
+</div>
+

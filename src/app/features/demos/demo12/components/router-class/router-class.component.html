@@ -1,0 +1,18 @@
+<div class="concept">
+    <h2>Router - Gérer ses routes dans un composant</h2>
+
+    <h3>Retour à la démo Router ? 🧐</h3>
+    <button class="cta-button" (click)="navigate()">Vers le bercail !</button>
+
+    <hr>
+
+    <h3>Passer un paramètre en navigation</h3>
+    <button class="cta-button" (click)="navigateWithParam()">Passez un id dans l'url</button>
+    @if (id) {<p class='warning'>💡 Regarde l'url !</p>}
+    
+    <hr>
+
+    <h3>Passer un queryParam en navigation</h3>
+    <button class="cta-button" (click)="navigateWithQuery()">Vers le bercail supplément informations !</button>
+    @if (name) {<p class='warning'>💡 Clique sur l'url</p>}
+</div>

@@ -1,0 +1,122 @@
+<div class="page-wrapper">
+    <section class="hero-section">
+        <h1>Théorie - Directives</h1>
+        <button class="cta-button" (click)="nav.navigate('/theorie/5')"> ⏮️</button>
+      <button class="cta-button" (click)="nav.navigate('/theorie/7')">⏭️</button>
+    </section>
+
+    <section class="content-section">
+
+        <div class="concept">
+            <h2>Contexte :</h2>
+            <p>Les directives sont des éléments fondamentaux d'Angular, permettant de manipuler le DOM et d'ajouter des comportements personnalisés à vos composants.</p>
+        </div>
+
+        <div class="concept">
+            <h2>Objectif :</h2>
+            <p>Comprendre comment utiliser les directives pour améliorer l'interaction avec l'utilisateur et dynamiser votre application Angular.</p>
+        </div>
+
+        <div class="concept">
+            <h2>Qu'est-ce qu'une directive ?</h2>
+            <p>
+                Une directive en Angular est une classe qui modifie le comportement ou l'apparence d'un élément DOM. Il existe trois types de directives :
+            </p>
+            <ul>
+                <li><strong>Directives structurelles :</strong> Modifient la structure du DOM en ajoutant ou supprimant des éléments. Exemple : <code>*ngIf</code>, <code>*ngFor</code>.</li>
+                <li><strong>Directives d'attribut :</strong> Changent l'apparence ou le comportement d'un élément DOM existant. Exemple : <code>ngClass</code>, <code>ngStyle</code>.</li>
+                <li><strong>Directives personnalisées :</strong> Permettent de créer des directives propres à votre application pour encapsuler des comportements spécifiques.</li>
+            </ul>
+        </div>
+
+        <div class="concept">
+            <h2>Exemple : Directive structurelle <code>*ngIf</code></h2>
+            <p>Utilisation de la directive <code>*ngIf</code> pour afficher ou masquer un élément en fonction d'une condition :</p>
+            <p>❗Nous pouvons désormais utiliser la syntaxe : &#64;if (condition) &lbrace;blocs d'instructions&rbrace; </p>
+            <pre><code>&lt;div *ngIf="isVisible"&gt;Ceci est visible&lt;/div&gt;</code></pre>
+            <p>Dans le fichier TypeScript :</p>
+            <pre><code>isVisible = true;</code></pre>
+            <div class="concept demo">
+                <strong>Résultat : <button class="cta-button" (click)="changeVisibility()">Clique-moi !</button></strong>
+                <div *ngIf="isVisible">
+                    <p>Coucou avec l'ancienne méthode</p>
+                </div>
+                @if (isVisible) {<p>Coucou avec la nouvelle méthode</p>}
+            </div>
+        </div>
+
+        <div class="concept">
+            <h2>Exemple : Directive structurelle <code>*ngFor</code></h2>
+            <p>Utilisation de la directive <code>*ngFor</code> pour itérer sur un tableau :</p>
+            <pre><code>&lt;li *ngFor="let item of items"&gt;<strong>&lbrace;&lbrace;</strong>item<strong>&rbrace;&rbrace;</strong>&lt;/li&gt;</code></pre>
+            <p>Dans le fichier TypeScript :</p>
+            <pre><code>items = ['Item 1', 'Item 2', 'Item 3'];</code></pre>
+
+            <div class="concept demo">
+                <strong>Résultat avec la méthode 1 : </strong>
+                <ul>
+                    <li *ngFor="let item of items">
+                        <p>{{item}}</p></li>
+                </ul>
+                <strong>Résultat avec la méthode 2 : </strong>
+                <ul>
+                    @for (item of items; track $index) {
+                        <li><p>{{item}}</p></li>
+                    }
+                </ul>
+
+            </div>
+        </div>
+
+        <div class="concept">
+            <h2>Exemple : Directive d'attribut <code>ngClass</code></h2>
+            <p>Utilisation de la directive <code>ngClass</code> pour appliquer des classes CSS conditionnellement :</p>
+            <pre><code>&lt;div [ngClass]="&lbrace;'active': isActive&rbrace;"&gt;Ceci peut être actif&lt;/div&gt;</code></pre>
+            <p>Dans le fichier Scss :</p>
+            <pre><code>.active &lbrace;
+    font-size: 2rem;
+&rbrace;</code></pre>
+            <p>Dans le fichier TypeScript :</p>
+            <pre><code>isActive = true;</code></pre>
+            <div class="concept demo">
+                <strong>Résultat : </strong> <button class="cta-button" (click)="changeIsActive()">Clique-moi !</button>
+                <br/>
+                <br/>
+                <div [ngClass]="{'active': isActive}">Ceci peut être actif</div>
+            </div>
+        </div>
+
+        <div class="concept">
+            <h2>Exemple : Directive personnalisée</h2>
+            <p>❗Lorsqu'on crée des éléments pouvant être utilisée partout dans notre application, il est d'usage de les
+                regrouper dans un module nommé Shared. Prenez donc la peine de le créer !
+            </p>
+            <p><Strong>Architecture :</Strong></p>
+            <ul>
+                <li>-> app</li>
+                <li>--> shared</li>
+                <li>---> directives</li>
+                <li>----> HighlightDirective.ts</li>
+            </ul>
+            <p>Création d'une directive personnalisée pour changer la couleur d'un élément :</p>
+            <pre><code>import &lbrace; Directive, ElementRef, Renderer2 &rbrace; from '&#64;angular/core';
+
+            &#64;Directive(&lbrace; selector: '[appHighlight]' &rbrace;)
+            export class HighlightDirective &lbrace; 
+                constructor(el: ElementRef, renderer: Renderer2) &lbrace; 
+                    renderer.setStyle(el.nativeElement, 'backgroundColor', 'yellow'); 
+                &rbrace; 
+            &rbrace;
+            </code></pre>
+            <div class="concept demo">
+                <p><strong>Résultat : </strong><button class="cta-button" (click)="changeIsBright()">Clique-moi !</button><br/>
+                    @if (isBright) {
+                        <p><span appHighlight>Surligne-moi !</span></p>
+                    } @else { <p><span >Surligne-moi !</span></p>}
+                    
+            </div>
+        </div>
+
+        <button class="cta-button" (click)="nav.navigate('/demos/6')">🟪Démonstration🟪</button>
+    </section>
+</div>

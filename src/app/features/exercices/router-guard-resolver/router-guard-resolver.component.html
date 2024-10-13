@@ -1,0 +1,27 @@
+<div class="page-wrapper">
+    <section class="hero-section">
+        <h1>Exercice : Router - Guards - Resolvers</h1>
+        <button class="cta-button" (click)="nav.navigate('/theorie/12')">🟦 Théorie 🟦</button>
+        <button class="cta-button" (click)="nav.navigate('/demos/12')">🟪 Démonstration 🟪</button>
+    </section>
+
+    <section class="content-section">
+        <div class="concept">
+            <h2>Enoncé :</h2>
+            <ul>
+                <li><p>Configurer le routing vers 3 composants :</p>
+                    <ul>
+                        <li><p>1. HomeComponent (/home)</p></li>
+                        <li><p>2. UserComponent (.../user/:id)</p></li>
+                        <li><p>3. LoginComponent (.../login)</p></li>
+                    </ul>
+                </li>
+                <li><p>Créer un Guard <code>AuthGuard</code> chargé de vérifier si l'utilisateur est connecté. S'il ne l'est pas, alors il sera redirigé vers la page de login.</p></li>
+            </ul>
+        </div>
+        
+        <app-exercice/>
+
+
+    </section>
+</div>

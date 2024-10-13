@@ -1,0 +1,27 @@
+<div class="concept form-container">
+    <h2>Formulaire avec Custom Validators</h2>
+
+    <form [formGroup]="myForm">
+
+        @for (field of formFields; track $index) {
+            <div class="form-group">
+                <label [for]="field.controlName"><strong>{{ field.label }}:</strong></label>
+                <input class="custom-input" [type]="field.type" [formControlName]="field.controlName" 
+                    [ngClass]="{ error : myForm.controls[field.controlName].touched && !myForm.controls[field.controlName].valid }">
+                
+            @if (myForm.controls[field.controlName].touched && !myForm.controls[field.controlName].valid) {
+                <span class="error">{{ myForm.controls[field.controlName].errors?.[field.validatorMessage] }}</span>
+            }   
+            </div>
+         }
+         @if (myForm.controls['passwordVerify'].touched && myForm.errors?.['twoPasswordCheck']) {
+            <div class="form-group">
+                <span class="error">{{ myForm.errors?.['twoPasswordCheck'] }}</span>
+            </div>
+         }
+
+        <div class="form-group">
+            <button class="cta-button" [disabled]="!myForm.valid">S'inscrire</button>
+        </div>
+    </form>
+</div>

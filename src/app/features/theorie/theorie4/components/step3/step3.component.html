@@ -1,0 +1,84 @@
+<div class="concept">
+    <h2>Étape 3 : Utilisation de routerLink et routerLinkActive</h2>
+    <p>Dans Angular, <code>routerLink</code> est utilisée pour définir les liens de navigation sans provoquer de rechargement complet de la page. Elle indique au routeur Angular quelle route charger. Par exemple, <code>routerLink="/home"</code> redirige l'utilisateur vers la route définie pour la page d'accueil sans rafraîchir l'intégralité du site.</p>
+    <p><strong>Définition :</strong></p>
+    <ul>
+        <li><strong>routerLink :</strong> Cet attribut est utilisée pour naviguer entre les différentes routes de l'application sans rechargement complet. Elle correspond à l'attribut href en HTML standard.</li>
+        <li><strong>routerLinkActive :</strong> Elle permet de définir un style pour un lien actif. Lorsque l'utilisateur est sur une page, ce lien sera automatiquement stylé comme "actif", en fonction de la classe CSS associée.</li>
+    </ul>
+    <pre><code>
+        &lt;ul&gt;
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a routerLink="/home" routerLinkActive="active"&gt;Home&lt;/a&gt;&lt;/li&gt;
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;li class="has-submenu"&gt;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a routerLink="/demos" routerLinkActive="active"&gt;Démonstrations&lt;/a&gt;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;ul class="submenu">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a routerLink="/demos/1"&gt;Démo 1&lt;/a&gt;&lt;/li&gt;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/ul&gt;
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;/li&gt;
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a routerLink="/exos" routerLinkActive="active"&gt;Exercices&lt;/a>&lt;/li&gt;
+        &lt;/ul&gt;
+    </code></pre>
+    <p><strong>Explication du code HTML :</strong></p>
+    <ul>
+        <li><strong>Home :</strong> Le lien vers la page d'accueil utilise <code>routerLink="/home"</code>, qui indique au routeur de charger le composant correspondant à la route /home. Le style <code>routerLinkActive="active"</code> permet de définir un style personnalisé (via la classe CSS active) lorsque la route est active.</li>
+        <li><strong>Démos :</strong> Ici, nous avons une entrée avec un sous-menu. Le lien principal pointe vers la route /demos, et en dessous, nous avons une liste déroulante (sous-menu) avec un lien vers /demos/1 pour accéder à "Démo 1". Le sous-menu est rendu visible au survol ou au clic (selon les règles CSS que l'on applique).</li>
+        <li><strong>Exercices :</strong> Ce lien permet d'accéder à la section des exercices en utilisant <code>routerLink="/exos"</code>, toujours avec le <code>routerLinkActive</code> pour styliser l'état actif.</li>
+    </ul>
+    <p><strong>Exemple de CSS pouvant être associé à ce code :</strong></p>
+    <pre><code>
+        nav ul &lbrace;
+            list-style: none;
+            padding: 0;
+            &rbrace;
+
+        nav ul li &lbrace;
+            display: inline-block;
+            margin-right: 15px;
+            position: relative;
+            &rbrace;
+
+        nav ul li a &lbrace;
+            text-decoration: none;
+            color: #000;
+            &rbrace;
+
+        nav ul li a.active &lbrace;
+            font-weight: bold;
+            color: #007bff;
+            &rbrace;
+
+        .submenu &lbrace;
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #f9f9f9;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            z-index: 1000;
+            &rbrace;
+
+        .submenu li &lbrace;
+            display: block;
+            padding: 8px;
+            white-space: nowrap;
+            &rbrace;
+
+        .submenu li a &lbrace;
+            display: block;
+            padding: 8px 16px;
+            color: #000;
+            text-decoration: none;
+            &rbrace;
+
+        .submenu li a:hover &lbrace;
+            background-color: #f1f1f1;
+            &rbrace;
+
+        .has-submenu:hover .submenu &lbrace;
+            display: block;
+            &rbrace;
+    </code></pre>
+</div>

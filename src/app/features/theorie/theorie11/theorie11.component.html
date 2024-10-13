@@ -1,0 +1,142 @@
+<div class="page-wrapper">
+    <section class="hero-section">
+        <h1>Théorie - Formulaires</h1>
+        <button class="cta-button" (click)="nav.navigate('/theorie/10')"> ⏮️</button>
+      <button class="cta-button" (click)="nav.navigate('/theorie/12')">⏭️</button>
+    </section>
+
+    <section class="content-section">
+
+        <div class="concept">
+            <h2>Les Différents Formulaires</h2>
+            <p>
+                En Angular, nous avons deux types de formulaires que nous pouvons utiliser :
+            </p>
+            <ul>
+                <li>
+                    <strong>Template-driven Forms :</strong> 
+                    Ces formulaires utilisent le <code>Two-way binding</code> pour lier les entrées de l'utilisateur à un modèle. 
+                    Ils sont généralement plus simples à mettre en place, mais moins flexibles pour des cas complexes.
+                    <br />
+                    <em>Rappel : Il est nécessaire d'importer <code>FormsModule</code> dans le module.</em>
+                    <br /><br />
+                </li>
+                <li>
+                    <strong>Reactive Forms :</strong> 
+                    Ces formulaires permettent de gérer des groupes de contrôles de manière réactive et de valider les champs de 
+                    formulaire plus efficacement.
+                    <br />
+                    <em>Rappel : Il est nécessaire d'importer <code>ReactiveFormsModule</code> dans le module.</em>
+                </li>
+            </ul>
+            <p>
+                Dans ce chapitre, nous privilégierons l'utilisation des <strong>Reactive Forms</strong> pour leur flexibilité et leur puissance.
+            </p>
+        </div>
+
+        <div class="concept">
+            <h2>FormBuilder</h2>
+            <p>
+                La classe intégrée à Angular, <code>FormBuilder</code>, nous permet de déclarer facilement nos formulaires réactifs. 
+                Pour l'utiliser, nous devons l'injecter dans le constructeur de notre composant.
+            </p>
+            <img [src]="formBuilderUrl">
+            <p>
+                Une fois que <code>FormBuilder</code> est injecté, nous pouvons créer des 
+                <code>FormControl</code> et des <code>FormGroup</code> de manière concise.
+            </p>
+        </div>
+
+        <div class="concept">
+            <h2>FormControl</h2>
+            <p>
+                Un <code>FormControl</code> représente un champ de formulaire. C'est l'unité de base d'un formulaire réactif. 
+                Nous pouvons le créer en utilisant <code>FormBuilder</code> :
+            </p>
+            <img [src]="formControlUrl">
+            <p>
+                Vous pouvez également définir des validators lors de sa création :
+            </p>
+            <img [src]="formControlValUrl">
+        </div>
+
+        <div class="concept">
+            <h2>FormGroup</h2>
+            <p>
+                Un <code>FormGroup</code> regroupe plusieurs <code>FormControl</code> pour former un formulaire complet. 
+            </p>
+            <img [src]="formGroupUrl">
+        </div>
+
+        <div class="concept">
+            <h2>FormArray</h2>
+            <p>
+                Le type <code>FormArray</code> représente une collection de <code>FormControl</code> et permet de gérer dynamiquement des contrôles de formulaire.
+                Vous pouvez l'utiliser si vous ne connaissez pas à l'avance le nombre de contrôles.
+            </p>
+            <img [src]="formArrayUrl">
+            <p>
+                Pour ajouter ou retirer des contrôles, vous pouvez utiliser <code>push()</code> et <code>removeAt()</code> :
+            </p>
+        </div>
+
+        <div class="concept">
+            <h2>Validators</h2>
+            <p>
+                Angular propose plusieurs validators intégrés pour valider les champs de formulaire, par exemple :
+            </p>
+            <ul>
+                <li><code>Validators.required</code> : Vérifie que le champ n'est pas vide.</li>
+                <li><code>Validators.email</code> : Vérifie que la valeur est une adresse email valide.</li>
+                <li><code>Validators.minLength</code> : Vérifie que la longueur minimale est respectée.</li>
+                <li><code>Validators.maxLength</code> : Vérifie que la longueur maximale est respectée.</li>
+            </ul>
+            <img [src]="validatorUrl">
+        </div>
+
+        <div class="concept">
+            <h2>Validation de Formulaire</h2>
+            <p>
+                Grâce aux objets <code>FormGroup</code> et <code>FormControl</code>, nous pouvons accéder à la propriété <code>valid</code> qui retourne <code>true</code> ou <code>false</code> en fonction des validations imposées.
+            </p>
+            <p>
+                Nous pouvons afficher des messages d'erreur en utilisant <code>&#64;If</code> :
+            </p>
+            <img [src]="validationUrl">
+        </div>
+
+        <div class="concept">
+            <h2>Récupération des Données</h2>
+            <p>
+                Une fois que le formulaire est validé, nous pouvons soumettre les données via un <code>Event Binding</code> :
+            </p>
+            <p>
+                Pour récupérer les données, utilisez la propriété <code>value</code> du <code>FormGroup</code> :
+            </p>
+            <img [src]="onSubmitDataUrl">
+            <br>
+            <img [src]="getDataUrl">
+            <br> 
+            
+        </div>
+
+        <div class="concept">
+            <h2>Custom Validator</h2>
+            <p>
+                Angular permet de définir nos propres validators. 
+                Pour cela, il suffit de créer une méthode qui retourne un 
+                objet de type <code>ValidatorFn</code>.
+            </p>
+            <img [src]="customValidatorUrl">
+            <p>
+                N'oubliez pas d'appeler cette fonction de validation dans 
+                la liste des Validators de votre champ.
+            </p>
+        </div>
+
+        <button class="cta-button" (click)="nav.navigate('/demos/11')">🟪Démonstration🟪</button>
+
+    </section>
+</div>
+
+

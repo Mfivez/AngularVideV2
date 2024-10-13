@@ -1,0 +1,33 @@
+<div class="concept"> 
+    <h3>Qu'est-ce que LocalStorage ?</h3> 
+    
+    <p>Le <strong>LocalStorage</strong> est un espace de stockage persistant côté client qui permet de conserver des données même après que l'utilisateur ait fermé l'onglet ou redémarré son navigateur.</p>
+
+    <p>Les données restent disponibles jusqu'à ce qu'elles soient supprimées manuellement ou par du code. Chaque application web peut y accéder pour conserver des informations entre différentes sessions de navigation.</p>
+
+    <p><strong>Caractéristiques :</strong></p>
+    <ul>
+        <li><p>Capacité de stockage : environ 5MB selon le navigateur.</p></li>
+
+        <li><p>Les données sont stockées indéfiniment, à moins d'être supprimées par le code ou manuellement par l'utilisateur.</p></li>
+        <li><p>Accessible via JavaScript à travers <code>localStorage</code>.</p></li>
+    </ul>
+    
+
+</div> 
+<br><br>
+<div class="concept"> 
+    <h3>Comment utiliser LocalStorage ?</h3> 
+    
+    <p>Pour utiliser <strong>LocalStorage</strong>, on peut utiliser trois méthodes principales :</p> 
+    <ul> 
+        <li><p><code>setItem('clé', 'valeur')</code> : Ajouter ou mettre à jour une entrée.</p></li> 
+        <li><p><code>getItem('clé')</code> : Récupérer la valeur stockée pour une clé donnée.</p></li> 
+        <li><p><code>removeItem('clé')</code> : Supprimer une entrée spécifique.</p></li> 
+    </ul>
+
+    <p><strong>Exemple d'utilisation : </strong></p>
+
+    <img [src]="imageUrl"><br>
+
+    <p class="warning">⚠️ <strong>Astuce :</strong> Faites attention à la taille des données stockées. Si vous devez gérer beaucoup de données, envisagez une solution plus adaptée, comme une base de données côté serveur.</p>

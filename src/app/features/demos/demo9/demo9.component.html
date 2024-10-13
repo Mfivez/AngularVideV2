@@ -1,0 +1,30 @@
+<div class="page-wrapper">
+    <section class="hero-section">
+      <h1>Démontrastion - &#64;Input | &#64;Output</h1>  
+    </section>
+  
+    <section id="concepts" class="content-section">
+      
+      <div class="concept">
+        <h2>&#64;Input : parent => enfant</h2>
+        <p><strong>Message envoyé à l'enfant : </strong> {{messageDuParent}}</p>
+        <app-child-input [message]="messageDuParent"/>
+      </div>
+
+      <div class="concept">
+        <h2>&#64;Output : enfant => parent</h2>
+        <p class="warning">⚠️ Le message reçu est affiché en console dans le cas présent !</p>
+        <app-child-output (messageEnvoye)="recevoirMessage($event)"/>
+      </div>
+
+      <div class="concept">
+        <h2>Communication bidirectionnelle</h2>
+        <p class="warning">⚠️ Importer le formsModule pour utiliser le ngModel</p>
+        <p><strong>Message envoyé de parent:</strong> {{messageRecu}}</p>
+        <app-child-bidirectional [(message)]="messageRecu"/>
+      </div>
+
+      <button class="cta-button" (click)="nav.navigate('/exos/6')">🟩Exercices🟩</button>
+
+    </section>
+  </div>

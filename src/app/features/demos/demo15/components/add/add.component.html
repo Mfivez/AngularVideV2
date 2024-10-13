@@ -1,0 +1,26 @@
+<div class="page-wrapper">
+    <section class="hero-section">
+      <h1>Démonstration - HttpClient - Formulaire d'ajout</h1>  
+    </section>
+
+    <section id="concepts" class="content-section">
+        <div class="concept"> 
+            <h3>Ajouter un produit</h3>
+
+            <form  [formGroup]="form" (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                    <label><strong>Nom :</strong></label>
+                    <input type="text" formControlName="name">
+                </div>
+
+                <div class="form-group">
+                    <label><strong>Prix : </strong></label>
+                    <input type="number" formControlName="price">
+                </div>
+
+                <div class="form-group">
+                    <button type="submit" class="cta-button">Ajouter</button>
+                    <button type="button" class="cta-button" (click)="goBack()">Retour</button>
+                </div>
+            </form>
+        </div>

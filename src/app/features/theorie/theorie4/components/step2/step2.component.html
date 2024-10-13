@@ -1,0 +1,21 @@
+<div class="concept">
+    <h2>Étape 2 : Importer le module nécessaire à la mise en place du routerLink</h2>
+    <p>Afin de pouvoir mettre en place une barre de navigation dynamique correspondant aux normes de fonctionnement d'Angular, nous devons importer dans le module où nous allons créer notre barre de navigation (layout), le <code>RouterModule</code> qui est le module Angular natif responsable du bon fonctionnement de nos composants liés au routing.</p>
+    <pre><code>
+        "&#64;"NgModule(&lbrace;
+        declarations: [
+            HeaderComponent,
+            FooterComponent
+        ],
+        imports: [
+            CommonModule,
+            RouterModule // Il faut donc ajouter le RouterModule dans les imports.
+        ],
+        exports: [
+            HeaderComponent,
+            FooterComponent
+        ]
+        &rbrace;)
+        export class LayoutModule &lbrace; &rbrace;
+    </code></pre>
+</div>

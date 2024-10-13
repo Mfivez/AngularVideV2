@@ -1,0 +1,43 @@
+<div class="page-wrapper">
+    <section class="hero-section">
+      <h1>Exercices - Components</h1>  
+      <button class="cta-button" (click)="nav.navigate('/theorie/2')">🟦 Théorie 🟦</button> 
+    </section>
+  
+    <section id="concepts" class="content-section">
+        
+        
+        <div class="concept">
+            <h2>Exercice 1 : Créer le module home</h2>
+            <p><strong>Mission :</strong></p>
+            <ul>
+              <li>Créer un module home dans un autre module appelé features et l’associer à un composant nommé home.</li>
+            </ul>
+            <p><strong>Étapes :</strong></p>
+            <ul>
+              <li>Créer un nouveau module nommé features : <code>ng g module app/features --routing</code>.</li>
+              <li>Créer un nouveau module nommé home : <code>ng g module app/features/home --routing</code>.</li>
+              <li>Créer un composant home : <code>ng g c component app/features/home</code>.</li>
+              <li>Intégrer le composant <code>home</code> le fichier <code>app.component.html</code> en utilisant son <code>sélecteur</code>.</li>
+            </ul>
+            <p><strong>Validation :</strong> Une fois intégré, la page d'accueil devrait s'afficher correctement avec le header et le footer.</p>
+          </div>
+
+          <div class="concept">
+            <h2>Exercice 2 : Créer les modules exercices et demos</h2>
+            <p><strong>Mission :</strong></p>
+            <ul>
+              <li>Créer un module exercices pour stocker les exercices que vous réaliserez au fil des cours.</li>
+              <li>Créer un module demonstrations pour stocker toutes les démonstrations effectuées en classe.</li>
+            </ul>
+          </div>
+
+          <div class="concept">
+            <h2>Exercice 3 : Créer un module demo1 dans le module demos.</h2>
+            <p><strong>Mission :</strong></p>
+            <ul>
+              <li>Créer un composant demo1 dans le module Démonstrations pour illustrer la 1ère démonstration.</li>
+            </ul>
+          </div>
+    </section>
+  </div>

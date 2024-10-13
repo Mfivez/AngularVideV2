@@ -1,0 +1,12 @@
+<div class="concept">
+    <h2>Liste des Pokémons :</h2>
+    @if (loading) {
+        <p>Chargement des Pokémons...</p>
+    } @else {
+        <ul>
+            @for (poke of pokemons; track $index) {
+                <li><a (click)="selectPokemon(poke)">{{ poke.name | titlecase }}</a></li>
+            }
+        </ul>
+    }
+</div>

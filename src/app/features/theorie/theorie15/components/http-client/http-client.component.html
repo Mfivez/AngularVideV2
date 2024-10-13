@@ -1,0 +1,167 @@
+<div class="concept"> 
+    <h2>HttpClient : Gérer les requêtes HTTP</h2> 
+    
+    <p><strong>HttpClient</strong> est un service intégré d'Angular utilisé pour effectuer des requêtes HTTP vers un serveur, comme des requêtes <strong>GET, POST, PUT, DELETE, etc</strong>. Il est basé sur les Observables, ce qui permet de gérer de manière asynchrone les réponses du serveur.</p>
+
+    <hr>
+
+    <h3>Les principales fonctionnalités de <code>HttpClient</code> incluent :</h3>
+    <ul>
+        <li><p>Envoyer des requêtes HTTP.</p></li>
+        <li><p>Intercepter les requêtes et réponses.</p></li>
+        <li><p>Gérer les erreurs de manière centralisée.</p></li>
+        <li><p>Configurer des en-têtes et d'autres options HTTP.</p></li>
+    </ul>
+</div>
+
+<br><br>
+
+<div class="concept"> 
+    <h2>Initialisation avec <code>provideHttpClient()</code></h2> 
+    
+    <p>Avec les dernières versions d'Angular, vous devez configurer le <strong>HttpClient</strong> dans le root de votre application en utilisant <code>provideHttpClient()</code>. 
+    Cela permet à Angular de fournir le service <code>HttpClient</code> dans toute l'application.</p>
+
+    <hr>
+
+    <h3>Configuration du <code>AppModule</code> :</h3>
+    <img [src]="imageUrl1"><br>
+    
+    <hr>
+
+    <p><strong>Explication :</strong><code>provideHttpClient()</code> est ajouté dans les <code>providers</code> de l'AppModule, garantissant que le service <code>HttpClient</code> est disponible partout dans l'application.</p>
+</div>
+
+<br><br>
+
+<div class="concept"> 
+    <h2>Requêtes HTTP simples avec HttpClient</h2> 
+    
+    <p>Une fois <code>HttpClient</code> configuré, vous pouvez l'injecter dans vos services ou composants pour effectuer des requêtes HTTP.</p>
+    
+    <hr>
+    
+    <h3>Exemple GET basique :</h3>
+    <p><strong>Déclaration :</strong></p>
+    <img [src]="imageUrl2"><br>
+
+    <hr>
+
+    <p><strong>Utilisation :</strong></p>
+    <img [src]="imageUrl3"><br>
+
+    <hr>
+
+    <p><strong>Explication :</strong> <code>this.httpClient.get()</code> est utilisé pour envoyer une requête GET qui retourne un Observable, vous permettant de souscrire à la réponse.</p>
+</div>
+
+<br><br>
+
+<div class="concept"> 
+    <h2>Configurer les requêtes HTTP</h2> 
+    <p>Lorsque vous effectuez des requêtes HTTP, vous pouvez passer des options supplémentaires, comme des en-têtes, des paramètres ou des configurations spécifiques. Cela se fait via un objet d'options.</p>
+
+    <hr>
+    
+    <h3>Exemple d'options :</h3>
+
+    <p><strong>Déclaration :</strong></p>
+    <img [src]="imageUrl4"><br>
+
+    <hr>
+
+    <p><strong>Utilisation :</strong></p>
+    <img [src]="imageUrl5"><br>
+
+    <hr>
+
+    <p><strong>Explication :</strong> Dans cet exemple, nous envoyons une requête GET avec des options supplémentaires, comme des en-têtes d'autorisation et des paramètres de requête.</p>
+</div>
+
+<br><br>
+
+<div class="concept"> 
+    <h2>Http Interceptors</h2> 
+    
+    <p>Les <strong>Http Interceptors</strong> sont des classes qui interceptent chaque requête HTTP sortante et la réponse entrante. Ils sont souvent utilisés pour ajouter des en-têtes comme les jetons d'authentification ou pour gérer les erreurs de manière globale.</p>
+
+    <hr>
+    
+    <h3>Exemples :</h3>
+
+    <p><strong>TokenInterceptor :</strong></p>
+    <img [src]="imageUrl6"><br>
+
+    <hr>
+
+    <p><strong>ErrorInterceptor :</strong></p>
+    <img [src]="imageUrl8"><br>
+
+    <hr>
+
+    <p><strong>Paramètrage :</strong></p>
+    <img [src]="imageUrl7"><br>
+
+    <hr>
+    <p><strong>Explication : </strong>Dans cet exemple, un <code>TokenInterceptor</code> est configuré dans le module principal. Cet Interceptor ajoute un jeton d'autorisation à chaque requête sortante.</p>
+
+    <p><strong>Astuce :</strong> Les Interceptors sont très utiles pour implémenter des mécanismes d'authentification, comme les tokens JWT, de manière centralisée dans toute l'application.</p>
+</div>
+<br><br>
+
+<div class="concept"> 
+    <h2>Gestion des erreurs</h2> 
+    
+    <p>La gestion des erreurs dans <code>HttpClient</code> est un aspect essentiel, surtout lorsqu'il s'agit d'appels à des services externes. En cas d'erreur, l'Observable émet une erreur, que vous pouvez capturer et gérer avec <code>catchError()</code>.</p>
+
+    <hr>
+    
+    <h3>Exemple :</h3>
+    <p><strong>Déclaration :</strong></p>
+    <img [src]="imageUrl9"><br>
+
+    <hr>
+
+    <p><strong>Utilisation :</strong></p>
+    <img [src]="imageUrl10"><br>
+
+    <hr>
+
+    <p><strong>Explication :</strong>Dans cet exemple, nous capturons les erreurs à l'aide de <code>catchError()</code>, qui permet de gérer les différentes erreurs de manière centralisée dans le code.</p>
+
+    <p><strong>Astuce :</strong> Il est recommandé de gérer les erreurs côté serveur (ex. : erreurs 404 ou 500) afin d'informer correctement l'utilisateur.</p>
+</div>
+
+<br><br>
+
+<div class="concept"> 
+    <h2>Envoyer des données - HttpClient</h2> 
+    
+    <p>En plus des requêtes GET, HttpClient vous permet également d'envoyer des données au serveur via des requêtes POST, PUT ou DELETE.</p>
+    <hr>
+    
+    <h3>Exemple POST :</h3>
+    <img [src]="imageUrl11"><br>
+
+    <hr>
+     
+    <p><strong>Explication :</strong><code>httpClient.post()</code> est utilisé ici pour envoyer des données JSON au serveur. Vous pouvez aussi passer des en-têtes et des options de requête comme avec GET.</p>
+</div>
+
+<br><br>
+
+<div class="concept"> 
+    <h2>Utiliser HttpClient avec les Observables</h2> 
+    
+    <p>Toutes les méthodes d'HttpClient renvoient des <strong>Observables</strong>, ce qui signifie que vous pouvez tirer parti des fonctionnalités RxJS pour gérer les flux de données asynchrones, transformer les réponses, et gérer les erreurs efficacement.</p>
+
+    <p>Par exemple, vous pouvez utiliser des opérateurs comme <code>map()</code> ou <code>catchError()</code> pour transformer ou capturer les erreurs des requêtes HTTP.</p>
+
+    <hr>
+
+    <h3>Exemple :</h3>
+    <img [src]="imageUrl12"><br>
+</div>
+
+<br><br>
+

@@ -1,0 +1,44 @@
+<div class="concept">
+    <h2>Event Binding - Lier un event Js à une méthode Ts</h2>
+    <ul>
+        <li><p><strong>Click Event :</strong></p></li>
+        <ul>
+            <li><p>Compteur de clique : {{ nombre1 }} <br/>
+                <button class="cta-button" (click)="reset1()">Reset</button>
+                <button class="cta-button" (click)="decrease1()">-</button>
+                <button class="cta-button" (click)="increase1()">+</button>
+            </p></li>
+        </ul>
+
+        <li><p><strong>Mouse Event : (survolez les boutons 😎)</strong></p></li>
+        <ul>
+            <li><p>Compteur de survol : {{ nombre2 }} <br/>
+                <button class="cta-button"  (mouseenter)="reset2()">Reset</button>
+                <button class="cta-button"  (mouseenter)="decrease2()">-</button>
+                <button class="cta-button"  (mouseenter)="increase2()">+</button>    
+            </p></li>
+        </ul>
+
+        <li><p><strong>Liste des events binding</strong></p></li>
+        <ul>
+            <li><p><strong>click</strong> = au clic de la souris</p></li>
+            <li><p><strong>dblclick</strong> = au double clic de la souris</p></li>
+            <li><p><strong>submit</strong> = à l'envoi du formulaire</p></li>
+            <li><p><strong>blur</strong> = perte du focus de l'élément (form)</p></li>
+            <li><p><strong>focus</strong> = au focus de l'élément</p></li>
+            <li><p><strong>scroll</strong> = lors du scroll de l'élément</p></li>
+            <li><p><strong>cut</strong> = lors du CTRL + X</p></li>
+            <li><p><strong>copy</strong> = lors du CTRL + C</p></li>
+            <li><p><strong>paste</strong> = lors du CTRL + V</p></li>
+            <li><p><strong>keyup</strong> = lors du relâchement de la touche du clavier</p></li>
+            <li><p><strong>keypress</strong> = lors de l'appui (maintenu) de la touche du clavier</p></li>
+            <li><p><strong>keydown</strong> = lors de l'appui de la touche du clavier</p></li>
+            <li><p><strong>mouseup</strong> = lors du relâchement du bouton de la souris (sur l'élément)</p></li>
+            <li><p><strong>mousedown</strong> = lors de l'appui du bouton de la souris (sur l'élément)</p></li>
+            <li><p><strong>mouseenter</strong> = lors de l'entrée de la souris dans l'élément</p></li>
+            <li><p><strong>mouseleave</strong> = lors de la sortie de la souris dans l'élément</p></li>
+            <li><p><strong>drag</strong> = lors de la sélection de l'élément pour le déplacer</p></li>
+            <li><p><strong>drop</strong> = lors du relâchement de l'élément</p></li>
+            <li><p><strong>dragover</strong> = lors du déplacement de cet élément (toutes les 100ms)</p></li>
+        </ul>
+    </ul>

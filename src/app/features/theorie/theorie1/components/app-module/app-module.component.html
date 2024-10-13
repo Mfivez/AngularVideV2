@@ -1,0 +1,39 @@
+<div class="concept">
+    <h2>6. Le module app :</h2>
+    <p>Le module <code>app</code> est le module racine de l'application, celui qui englobe l'ensemble du projet Angular. Il est comparable à la fonction main en Java et sert de point d'entrée pour le projet.</p>
+    <h3>Analyse du module <code>app</code> :</h3>
+    <ol>
+      <li><p><strong>app.module.ts</strong> :
+          <ul>
+            <li><strong>Le décorateur <code>&#64;NgModule</code></strong> : Annoté pour définir la configuration du module via différents attributs (comme <code>declarations</code>, <code>imports</code>, <code>providers</code>, etc.).</li>
+            <li><strong>declarations</strong> : Liste les composants utilisés par le module.</li>
+            <li><strong>imports</strong> : Spécifie les modules externes ou autres modules Angular dont le module courant dépend.</li>
+            <li><strong>exports</strong> : Permet de rendre les composants, directives ou pipes d'un module disponibles pour d'autres modules.</li>
+            <li><strong>providers</strong> : Déclare les services et autres dépendances disponibles dans ce module via l'injection de dépendances.</li>
+            <li><strong>bootstrap</strong> : Spécifie le composant principal de l'application, généralement <code>AppComponent</code>.</li>
+            <li><strong>export class AppModule</strong> : Le module est exporté et donc importable ailleurs dans l’application.</li>
+          </ul>
+      </li>
+      <li><p><strong>La partie <code>component</code> du module :</strong> Composée de 3 fichiers distincts :
+          <ul>
+            <li><code>app.component.html</code> : Le template visuel</li>
+            <li><code>app.component.scss</code> : La feuille de style</li>
+            <li><code>app.component.ts</code> : La logique des composants en TypeScript, incluant le décorateur <code>&#64;Component</code> avec les attributs <code>selector</code>, <code>templateUrl</code>, et <code>styleUrls</code>.</li>
+          </ul>
+      </li>
+      <li><p><strong>Le fichier <code>app-routing.module.ts</code> :</strong> Gère la navigation entre les différentes pages ou composants de l'application Angular. Il configure les routes pour diriger l'utilisateur vers les différents composants en fonction de l'URL.
+          <ul>
+            <li><strong>Le décorateur <code>&#64;NgModule</code></strong> : Définit la configuration du module de routage.</li>
+            <li><strong>RouterModule et Routes</strong> :
+              <ul>
+                <li><code>RouterModule</code> : Configure la navigation dans l'application.</li>
+                <li><code>Routes</code> : Un tableau d'objets définissant les différentes routes, chaque objet contenant une URL path et le composant associé.</li>
+              </ul>
+            </li>
+            <li><strong>imports</strong> : Inclut <code>RouterModule.forRoot(routes)</code> pour configurer les routes.</li>
+            <li><strong>exports</strong> : Permet de rendre <code>RouterModule</code> accessible à l'ensemble de l'application.</li>
+          </ul>
+      </li>
+    </ol>
+    <p><strong>Qu'est-ce qu'un module de routage ?</strong> Le module de routage en Angular permet de gérer la navigation entre les différentes vues ou composants de l'application. Il simplifie la gestion des chemins, des composants correspondants et des paramètres d'URL, facilitant ainsi la création d'applications à page unique (SPA).</p>
+  </div>

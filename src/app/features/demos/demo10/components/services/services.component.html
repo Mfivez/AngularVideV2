@@ -1,0 +1,18 @@
+<div class="concept">
+    <h2>Services & Injection de dépendances</h2>
+
+    <p>
+        <strong>État de connexion :</strong> 
+        {{ isConnected ? '🟩Connecté' : '🟥Déconnecté' }}
+    </p>
+    <p>
+    @if (!isConnected) {
+        
+        <p><strong>Username : </strong><input type="text" [(ngModel)]="username"></p>
+        <p><strong>Password : </strong><input class="custom-input" type="password" [(ngModel)]="password"></p>
+        <button class="cta-button" (click)="logIn()">Connexion</button>
+        @if (message) { {{ message }} }
+    } @else {
+        <button class="cta-button" (click)="logOut()">Déconnexion</button>
+    }
+</div>

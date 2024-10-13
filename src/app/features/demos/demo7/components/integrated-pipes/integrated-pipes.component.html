@@ -1,0 +1,60 @@
+<div class="concept">
+    <h2>Pipes intégrés</h2>
+    <ul>
+        <h3>Pour du texte : </h3>
+        <ul>
+            <li><p><strong>Valeur initiale : </strong> {{ maVariable1 }}</p></li>
+            <li><p><strong>Après Uppercase :</strong> {{ maVariable1 | uppercase }}</p></li>
+            <li><p><strong>Après Lowercase :</strong> {{ maVariable1 | lowercase }}</p></li>
+            <li><p><strong>Après Titlecase :</strong> {{ maVariable1 | titlecase }}</p></li>
+        </ul>
+    </ul>
+    <hr>
+    <ul>
+        <h3>Pour des nombres: </h3>
+        <ul>
+            <li><p><strong>Valeur initiale : </strong> {{ maVariable2 }}</p></li>
+            <li><p><strong>Après number :</strong> {{ maVariable2 | number }}</p></li>
+            <li><p><strong>Après number : '1.6-6' :</strong> {{ maVariable2 | number : '1.6-6' }} (toujours 6 chiffres)</p> </li>
+            <li><p><strong>Après number : '1.2-6' :</strong> {{ maVariable2 | number : '1.2-6' }} (entre 2 et 6 chiffres)</p> </li>
+            <li><p><strong>Après number : '10.2-6' :</strong> {{ maVariable2 | number : '10.2-6' }}</p> </li>
+        </ul>
+    </ul>
+    <hr>
+    <ul>
+        <h3>Pour des dates: </h3>
+        <ul>
+            <li><p><strong>Valeur initiale : </strong> {{ maVariable3 }}</p></li>
+            <li><p><strong>Après date :</strong> {{ maVariable3 | date }}</p></li>
+            <li><p><strong>Après date : 'dd/MM/yyyy' :</strong> {{ maVariable3 | date : 'dd/MM/yyyy'}}</p> </li>
+        </ul>
+    </ul>
+    <hr>
+    <ul>
+        <h3>Pour des pourcentages : </h3>
+        <ul>
+            <li><p><strong>Valeur initiale : </strong> {{ maVariable5 }}</p></li>
+            <li><p><strong>Après percent :</strong> {{ maVariable5 | percent }}</p></li>
+            <li><p><strong>Après percent : '2.3-5' :</strong> {{ maVariable5 | percent : '2.3-5'}}</p> </li>
+        </ul>
+    </ul>
+    <hr>
+    <ul>
+        <h3>Pour des valeurs monétaires : </h3>
+        <ul>
+            <li><p><strong>Valeur initiale : </strong> {{ maVariable6 }}</p></li>
+            <li><p><strong>Après currency :</strong> {{ maVariable6 | currency }}</p></li>
+            <li><p><strong>Après currency : 'EUR' :</strong> {{ maVariable6 | currency : 'EUR'}}</p> </li>
+            <li><p><strong>Après currency : 'EUR' : 'symbol' :</strong> {{ maVariable6 | currency : 'EUR' : 'symbol'}}</p> </li>
+            <li><p><strong>Après currency : 'EUR' : 'code' :</strong> {{ maVariable6 | currency : 'EUR' : 'code'}}</p> </li>
+        </ul>
+    </ul>
+    <hr>
+    <ul>
+        <h3>Pour des JSON : </h3>
+        <ul>
+            <li><p><strong>Valeur initiale : </strong> {{ maVariable4}} : nom:{{maVariable4.nom}}, prenom:{{maVariable4.prenom}}, sexe:{{maVariable4.sexe}}</p></li>
+            <li><p><strong>Après json :</strong> {{ maVariable4 | json }}</p></li>
+        </ul>
+    </ul>
+</div>

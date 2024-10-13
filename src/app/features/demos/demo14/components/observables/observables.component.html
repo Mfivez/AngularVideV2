@@ -1,0 +1,9 @@
+<div class="concept">
+    <h2>Les Observables - Gestion d'évènements et de données aynchrones</h2>
+    <p><strong>User : @if (isConnected) { 🟩 Connecté } @else { 🟥 Déconnecté }</strong></p>
+    @if (isConnected) {
+        <button class="cta-button" (click)="logout()" *ngIf="isConnected">Se déconnecter</button>
+    } @else {
+        <button class="cta-button" (click)="login()" *ngIf="!isConnected">Se connecter</button>
+    }
+</div>

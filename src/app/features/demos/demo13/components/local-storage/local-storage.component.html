@@ -1,0 +1,12 @@
+<div class="concept">
+    <h2>LocalStorage - Persistant à la fermeture du navigateur</h2>
+    <input class="custom-input" [(ngModel)]="usernameLocal" placeholder="Enter your username">
+      <button class="cta-button" (click)="saveLocal()">Save</button>
+      <button class="cta-button" (click)="loadLocal()">Load</button>
+      <button class="cta-button" (click)="removeLocal()">Remove a Key</button>
+      <button class="cta-button" (click)="clearLocal()">Clear</button>
+      <p>Username: <strong>{{ savedUsernameLocal }}</strong></p>
+      
+</div>
+
+      

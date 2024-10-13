@@ -1,0 +1,27 @@
+<div class="page-wrapper">
+    <section class="hero-section">
+      <h1>Démonstration - HttpClient - Formulaire Update</h1>  
+    </section>
+
+    <section id="concepts" class="content-section">
+        <div class="concept"> 
+            <h3>Mettre à jour un produit</h3>
+
+            <form  [formGroup]="editForm">
+                <div class="form-group">
+                    <label><strong>Nom :</strong></label>
+                    <input type="text" formControlName="name" placeholder="Nom du produit...">
+                </div>
+            
+                <div class="form-group">
+                    <label><strong>Prix : </strong></label>
+                    <input type="number" formControlName="price" placeholder="Prix du produit...">
+                </div>
+            
+                <div class="form-group">
+                    <button type="submit" class="cta-button" (click)="updateProduct()">Mettre à jour</button>
+                    <button type="button" class="cta-button" (click)="cancelUpdate()">Annuler</button>
+                </div>
+
+            </form>
+        </div>

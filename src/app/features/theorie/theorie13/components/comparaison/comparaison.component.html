@@ -1,0 +1,31 @@
+<div class="concept"> 
+    <h3>LocalStorage vs SessionStorage</h3> 
+    <p><strong>Différence principale :</strong> 
+    La différence clé entre LocalStorage et SessionStorage est la durée de vie des données :</p> 
+    <ul> 
+        <li><p><strong>LocalStorage</strong> : Les données persistent même après la fermeture du navigateur.</p></li> 
+        <li><p><strong>SessionStorage</strong> : Les données sont supprimées lorsque l'utilisateur ferme l'onglet ou le navigateur.</p></li> 
+    </ul>
+
+    <p><strong>Choix entre LocalStorage et SessionStorage :</strong></p>
+    <ul>
+        <li><p>Utilisez <strong>LocalStorage</strong> pour stocker des données que vous souhaitez conserver sur le long terme (comme des préférences utilisateur).</p></li>
+        <li><p>Utilisez <strong>SessionStorage</strong> pour des données temporaires qui n'ont de sens que durant la session active (comme des paniers d'achat ou des données de formulaire).</p></li>
+    </ul>
+</div>
+
+<br><br>
+
+<div class="concept"> 
+    <h3>Nettoyage du LocalStorage et du SessionStorage</h3> 
+    <p>Il est important de savoir comment <strong>supprimer des données</strong> dans LocalStorage et SessionStorage pour éviter d'accumuler trop d'informations inutiles.</p>
+
+    <p><strong>Les méthodes utilisées pour cela sont :</strong></p>
+    <ul>
+        <li><p><code>removeItem('clé')</code> : Supprime une entrée spécifique.</p></li>
+        <li><p><code>clear()</code> : Supprime <strong>toutes</strong> les entrées du stockage (utilisée avec précaution).</p></li>
+    </ul>
+
+    <p class="warning">⚠️ Attention : La méthode <code>clear()</code> supprime toutes les données stockées, ce qui peut causer des pertes d'informations importantes pour l'utilisateur.</p>
+</div>
+
