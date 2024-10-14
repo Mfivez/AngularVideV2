@@ -6,5 +6,4 @@ import { Component } from '@angular/core';
   styleUrl: './routing-context.component.scss'
 })
 export class RoutingContextComponent {
-
 }

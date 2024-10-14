@@ -58,6 +58,8 @@ nav {
         border-radius: 4px;
         box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
         z-index: 1000;
+        max-height: 400px; 
+        overflow-y: auto;
 
         li {
           padding: 0.5rem 1rem;
@@ -71,6 +73,24 @@ nav {
               color: $primary-color;
             }
           }
+        }
+
+        &::-webkit-scrollbar {
+          width: 8px;
+        }
+
+        &::-webkit-scrollbar-track {
+          background: $dark-primary;
+          border-radius: 4px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+          background: $secondary-color;
+          border-radius: 4px;
+        }
+
+        &::-webkit-scrollbar-thumb:hover {
+          background: lighten($secondary-color, 10%);
         }
       }
     }

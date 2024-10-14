@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrl: './set-routing1.component.scss'
 })
 export class SetRouting1Component {
-
+  imageUrl1: String = "assets/routing/command.png"
+  imageUrl2: String = "assets/routing/architecture.png"
+  imageUrl3: String = "assets/routing/appRouting.png"
+  imageUrl4: String = "assets/routing/featuresRouting.png"
 }

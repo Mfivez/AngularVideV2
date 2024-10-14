@@ -3,69 +3,37 @@
     <hr>
     <h3>Étape 1 : Écrire le header et le footer directement dans <code>app.component.html</code></h3>
     <p>Pour commencer simplement, nous allons ajouter manuellement du code HTML pour un header et un footer dans le fichier <code>app.component.html</code>.</p>
-    <pre><code>&lt;header&gt;
-            &lt;h1&gt;Mon Application Angular&lt;/h1&gt;
-        &lt;/header&gt;
-        
-        &lt;main&gt;&lt;/main&gt;
-        
-        &lt;footer&gt;
-            &lt;p&gt;&copy; 2024 Mon Application&lt;/p&gt;
-        &lt;/footer&gt;
-    </code></pre>
+    <img [src]="imageUrl1">
     <hr>
     <h3>Étape 2 : Modulariser le code en créant des composants pour le footer et le header</h3>
     <p>Plutôt que d’écrire directement le HTML dans <code>app.component.html</code>, nous allons respecter l'approche modulaire d'Angular en créant des composants distincts pour le header et le footer.</p>
     <p>Pour créer les composants, utilise les commandes suivantes dans la CLI Angular :</p>
-    <pre><code>ng g c header
-        ng g c footer
-    </code></pre>
+    <img [src]="imageUrl2"><br>
+    <img [src]="imageUrl3">
+
     <hr>
+
     <h3>Étape 3 : Utiliser les composants dans <code>app.component.html</code></h3>
     <p>Une fois les composants créés, nous devons les intégrer dans notre <code>app.component.html</code> en utilisant leurs sélecteurs.</p>
-    <pre><code>
-        &lt;app-header&gt;&lt;/app-header&gt;
-    
-        &lt;main&gt;&lt;/main&gt;
-        
-        &lt;app-footer&gt;&lt;/app-footer&gt;
-    </code></pre>
+    <img [src]="imageUrl4">
     <hr>
     <h3>Problème : Angular affiche une erreur. Pourquoi ?</h3>
     <p>À ce stade, Angular peut afficher une erreur indiquant qu'il ne connaît pas les composants que tu essayes d'afficher (le header et le footer).</p>
     <hr>
     <h3>Étape 4 : Déclarer les composants dans <code>app.module.ts</code></h3>
     <p>Pour résoudre cette erreur, il est nécessaire d'informer Angular de l'existence de ces composants. Cela se fait dans le fichier <code>app.module.ts</code>, en les ajoutant à la section des déclarations du module principal.</p>
-    <pre><code>
-      &#64;NgModule(&lbrace;
-          declarations: [AppComponent,HeaderComponent,FooterComponent],
-          imports: [BrowserModule],
-          bootstrap: [AppComponent]
-          &rbrace;)
-        export class AppModule
-    </code></pre>
+    <img [src]="imageUrl5">
+
     <hr>
+
     <h3>Problème : Toujours une erreur. Pourquoi ?</h3>
     <p>Si tu crées des modules fonctionnels (comme un module "feature" pour regrouper des composants spécifiques), il se peut qu'une autre erreur apparaisse. Cela est dû au fait que, bien que les composants soient déclarés dans un module, ce module ne les exporte pas encore. Cela signifie que les autres modules ne peuvent pas les utiliser.</p>
+
     <hr>
+
     <h3>Étape 5 : Exporter les composants dans <code>feature.module.ts</code></h3>
     <p>Pour que les composants d’un module soient accessibles dans d’autres modules, il est nécessaire de les exporter. Nous allons donc nous rendre dans le fichier <code>feature.module.ts</code> et y ajouter les exports nécessaires.</p>
-    <pre><code>
-      &#64;NgModule(&lbrace;
-            declarations: [
-            HeaderComponent,
-            FooterComponent
-            ],
-            imports: [
-            CommonModule
-            ],
-            exports: [
-            HeaderComponent,
-            FooterComponent
-            ]
-        &rbrace;)
-        export class FeatureModule
-    </code></pre>
+    <img [src]="imageUrl6">
 
     <p>Grâce à cette étape, les composants du module "feature" peuvent maintenant être importés et utilisés dans d’autres modules, comme le module principal.</p>
   </div>
