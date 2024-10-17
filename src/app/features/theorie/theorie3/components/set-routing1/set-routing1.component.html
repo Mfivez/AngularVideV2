@@ -57,11 +57,51 @@
 
     <p><strong>3. Routing <code>sous-modules</code> :</strong></p>
 
-    <p>Partons, pour continuer, du principe que le module <code>Demo</code> soit pour le sous-module Demo1, définissons la route dans <code>demos-routing.module.ts</code> :</p>
-    <pre><code>
-      const routes: Routes = [
-      &lbrace; path: 'demo1', component: Demo1Component &rbrace;];
-      // Ce qui nous donne au niveau de l'adresse : 
-      //'http://localhost:4200/demos/demo1'
-    </code></pre>
+    <p>Partons, pour continuer, du principe que le module <code>Demo</code> possède une route liée au composant 3 nommé Demo3 : </p>
+    <img [src]="imageUrl5"><br>
+    
+    <p>Nous nous retrouverions donc avec cette URL : <code>http://localhost/4200/demos/3</code> qui serait liée au composant Demo3Component.</p>
+    <p>C'est-à-dire que c'est le contenu de ce composant qui serait affiché à l'écran.</p>
+
+    <hr>
+
+    <p><strong>4. Routing <code>Test</code> :</strong></p>
+    <p>Une fois le routage en place, vous pouvez tester la navigation directement dans l'URL :</p>
+    <ul>
+      <li>Exemple : <code>http://localhost:4200/demos/3</code></li>
+    </ul>
+    
+    <hr>
+
+    <p><strong>5. Routing - Spécifer à Angular qu'il doit afficher, sur la page principale, un composant selon l'url active :</strong></p>
+    <p>Pour indiquer à Angular qu'il doit afficher une page spécifique en fonction de l'URL active, nous devons, dans l'<code>app.component.html</code>, utiliser une balise spéciale appelée <code>&lt;router-outlet&gt;</code>.</p>
+
+    <img [src]="imageUrl6">
+
+    <p>Pour faire simple, via l'ajout de cette balise, on spécifie à Angular qu'à chaque fois que l'utilisateur navigue vers une nouvelle URL, le contenu du <code>&lt;router-outlet&gt;</code> doit être mis à jour avec le composant associé à cette route.</p>
+
+    <hr>
+
+    <p><strong>6. Routing <code>Lazy loading</code> :</strong></p>
+    <p>Le lazy loading (chargement différé) est une technique utilisée dans Angular pour améliorer les performances d'une application.</p>
+
+    <p>Plutôt que de charger tous les modules dès le démarrage de l'application, le lazy loading permet de ne charger que les modules nécessaires à l'affichage de la page actuelle, réduisant le temps de chargement initial, car seuls les composants et ressources dont l'utilisateur a besoin immédiatement sont chargés.</p>
+
+    <p>Dans notre app, nous avons configuré le lazy loading pour les modules Home, Exercices, et Demos. Ces modules ne sont pas chargés immédiatement lors du lancement de l'application, mais uniquement lorsque l'utilisateur navigue vers les routes correspondantes.</p>
+
+    <p>Dans notre fichier <code>features-routing.module.ts</code>, nous avons défini le lazy loading des modules de la manière suivante :</p>
+    
+    <img [src]="imageUrl4">
+    <p>Dans cette config, Angular ne charge chaque module (<code>HomeModule</code>, <code>DemosModule</code>, <code>ExercicesModule</code>) que lorsque l'utilisateur accède aux routes <code>/home</code>, <code>/demos</code>, ou <code>/exos</code>. Cela permet de réduire le poids de l'application au démarrage et de charger les modules uniquement quand ils sont nécessaires.</p>
+
+    <p><strong>6. Routing <code>Ajustement des imports</code> :</strong></p>
+
+    <p>Puisque le lazy loading est déjà configuré dans notre module de routage, nous n'avons plus besoin d'importer manuellement les modules enfants (<code>HomeModule</code>, <code>ExercicesModule</code>, et <code>DemosModule</code>) dans notre module <code>FeaturesModule</code>.</p>
+
+    <p>L'idée étant que les modules seront chargés automatiquement lorsqu'ils seront requis via le routing, ce qui évite de les dupliquer dans les imports.</p>
+
+    <p>Il faut donc ajuster nos différents modules en conséquence, exemple avec <code>FeaturesModule</code> :</p>
+    <img [src]="imageUrl7">
+    <p>En supprimant les imports et exports des modules enfants (<code>HomeModule</code>, <code>ExercicesModule</code>, <code>DemosModule</code>), on évite des chargements redondants, optimisant ainsi l'application.</p>
+    
   </div>

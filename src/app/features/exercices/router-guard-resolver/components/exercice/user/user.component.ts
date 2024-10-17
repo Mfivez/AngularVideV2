@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { NavigateService } from '../../../../../theorie/shared/services/navigate.service';
 
 @Component({
   selector: 'app-user',
@@ -9,7 +10,7 @@ import { ActivatedRoute } from '@angular/router';
 export class UserComponent implements OnInit {
   userId: number | null = null;
 
-  constructor(private route: ActivatedRoute) {}
+  constructor(private route: ActivatedRoute, public nav: NavigateService) {}
 
   ngOnInit(): void {
     this.userId = Number(this.route.snapshot.paramMap.get('id'));

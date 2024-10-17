@@ -3,10 +3,13 @@ import { CanActivateFn, Router } from '@angular/router';
 import { FakeAuthService } from './fake-auth.service';
 
 export const authGuardGuard: CanActivateFn = (route, state) => {
-  if (inject(FakeAuthService).isAuthenticated()) return true
-  
+  const auth = inject(FakeAuthService)
+  const router = inject(Router)
+
+  if (auth.isAuthenticated()) return true
+
   else {
-    inject(Router).navigate(['/login'])
+    router.navigate(['exos/8/login'])
     return false
   }
 };

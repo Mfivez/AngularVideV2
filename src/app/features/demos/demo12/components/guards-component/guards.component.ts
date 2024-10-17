@@ -7,22 +7,22 @@ import { LoginService } from '../../tools/services/login.service';
   styleUrl: './guards.component.scss'
 })
 export class GuardsComponent {
-  isConnected: boolean = false;
+  isConnected: boolean = false
 
   constructor (private _loginService: LoginService) { }
 
   ngOnInit (): void {
-    this.isConnected = this._loginService.isConnected;
+    this.isConnected = this._loginService.isConnected
   }
 
   login (): void {
-    this._loginService.logIn();
-    this.isConnected = this._loginService.isConnected;
+    this._loginService.logIn()
+    this.isConnected = this._loginService.isConnected
   }
 
   logout (): void {
-    this._loginService.logOut();
-    this.isConnected = this._loginService.isConnected;
+    this._loginService.logOut()
+    this.isConnected = this._loginService.isConnected
   }
 
 }

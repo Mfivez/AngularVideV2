@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Theorie4Component } from './theorie4.component';
 import { ContextComponent } from './components/context/context.component';
-import { ObjectifComponent } from './components/objectif/objectif.component';
 import { Step1Component } from './components/step1/step1.component';
 import { Step2Component } from './components/step2/step2.component';
 import { Step3Component } from './components/step3/step3.component';
@@ -14,7 +13,6 @@ import { Step4Component } from './components/step4/step4.component';
   declarations: [
     Theorie4Component,
     ContextComponent,
-    ObjectifComponent,
     Step1Component,
     Step2Component,
     Step3Component,
@@ -26,7 +24,6 @@ import { Step4Component } from './components/step4/step4.component';
   exports: [
     Theorie4Component,
     ContextComponent,
-    ObjectifComponent,
     Step1Component,
     Step2Component,
     Step3Component,

@@ -4,11 +4,8 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class LoginService {
-
   isConnected: boolean = true;
-
-  constructor () { }
-
+  
   logIn (): void {
     this.isConnected = true;
   }

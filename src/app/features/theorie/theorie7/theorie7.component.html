@@ -20,50 +20,53 @@
 
             <p><strong>1. component.js : </strong></p>
             <img [src]="imageUrl6"> <br/>
+
             <p><strong>2. component.html : </strong></p>
             <img [src]="imageUrl5">
             
-
+            <br>
             <div class="concept demo">
                 <ul>
-                    <li><strong>DatePipe :</strong> Formate une date.</li>
-                    <p>Aujourd'hui : {{ today | date:'fullDate' }}</p>
-                    
-                    <li><strong>CurrencyPipe :</strong> Formate un nombre en tant que devise.</li>
-                    <p>Prix : {{ price | currency:'EUR' }}</p>
-                    
-                    <li><strong>DecimalPipe :</strong> Formate un nombre en un nombre décimal.</li>
-                    <p>Score : {{ score | number:'1.0-2' }}</p>
-                    
-                    <li><strong>UpperCasePipe et LowerCasePipe :</strong> Modifient la casse d'une chaîne.</li>
-                    <p>Majuscules : {{ text | uppercase }}</p>
+                    <li><p><strong>DatePipe :</strong> Formate une date.</p>
+                    <p>Aujourd'hui : {{ today | date:'fullDate' }}</p></li>
+                    <hr>
+                    <li><p><strong>CurrencyPipe :</strong> Formate un nombre en tant que devise.</p>
+                    <p>Prix : {{ price | currency:'EUR' }}</p></li>
+                    <hr>
+                    <li><p><strong>DecimalPipe :</strong> Formate un nombre en un nombre décimal.</p>
+                    <p>Score : {{ score | number:'1.0-2' }}</p></li>
+                    <hr>
+                    <li><p><strong>UpperCasePipe et LowerCasePipe :</strong> Modifient la casse d'une chaîne.</p>
+                    <p>Majuscules : {{ text | uppercase }}</p></li>
                 </ul>
             </div>
 
         </div>
 
         <div class="concept">
-            <h2>Création de pipes personnalisés</h2>
+            <h2>Pipes personnalisés</h2>
             <p>Pour créer un pipe personnalisé, suivez ces étapes :</p>
-            <ol>
-                <li><strong>Générer un pipe :</strong> Utilisez Angular CLI pour générer un pipe.</li>
+            <ul>
+                <li><p><strong>Générer un pipe :</strong> Utilisez Angular CLI pour générer un pipe.</p></li>
+
                 <pre><code>ng generate pipe customPipeName</code></pre>
                 
-                <li><strong>Implémentation :</strong> Écrivez la logique de transformation dans le pipe.</li>
+                <li><p><strong>Implémentation :</strong> Écrivez la logique de transformation dans le pipe.</p></li>
                 <img [src]="imageUrl4">
 
                 
-            </ol>
+            </ul>
         </div>
 
         <div class="concept">
-            <h2>Exemples de cas d’utilisation</h2>
-            <h3>Exemple : Formatage d’un nom complet</h3>
-            <p>Création d’un pipe qui capitalise la première lettre de chaque mot :</p>
+            <h2>Exemple</h2>
+            <p>Création d’un pipe qui capitalise la 1ère lettre de chaque mot :</p>
 
             <img [src]="imageUrl"/>
 
-            <p>Utilisation dans le template :</p>
+            <hr>
+
+            <h3>Utilisation :</h3>
             <img [src]="imageUrl2"/>
 
             
@@ -72,22 +75,35 @@
 
         <div class="concept">
             <h2>Pipes purs vs impurs</h2>
-            <h3>1.Les pipes purs : </h3>
-            <p>Un pipe pur est un pipe qui ne modifie les données que si l'entrée (input) change. Si les données envoyées au pipe restent les mêmes, Angular ne réévalue pas le pipe pour optimiser les performances. La plupart des pipes intégrés d’Angular sont purs.
+            <h3>1. Les pipes purs : </h3>
+            <p>Un pipe pur est un pipe qui ne modifie les données que si l'entrée (<code>input</code>) change.</p>
+            
+            <p>Si les données envoyées au pipe restent les mêmes, Angular ne réévalue pas le pipe pour optimiser les performances. </p>
+
+            <p class="warning">La plupart des pipes intégrés d’Angular sont purs.</p>
+            
+            <hr>
             <h3>Exemples :</h3>    
                 <ul>
-                    <li><p>DatePipe : Formate une date.</p></li>
-                    <li><p>UpperCasePipe : Convertit un texte en majuscules.</p></li>
-                    <li><p>CurrencyPipe : Formate un nombre en une monnaie (ex: EUR, USD).</p></li>
+                    <li>
+                        <p><strong>DatePipe :</strong> Formate une date.</p>
+                    </li>
+                    <li>
+                        <p><strong>UpperCasePipe :</strong> Convertit un texte en majuscules.</p>
+                    </li>
+                    <li>
+                        <p><strong>CurrencyPipe :</strong> Formate un nombre en une monnaie (ex: EUR, USD).</p>
+                    </li>
                 </ul>
-            <p>Si nous prenons l'exemple sur la date du jour de la partie sur 
-                les pipes intégrés, tant que la valeur de <strong>today</strong>
-                ne changera pas dans le code, Angular ne réévaluera pas le pipe.
+            <p>Si nous prenons l'exemple sur la date du jour de la partie sur les pipes intégrés, tant que la valeur de <strong>today</strong>
+            ne changera pas dans le code, Angular ne réévaluera pas le pipe.
             </p>
 
-            <h3>2.Les pipes impurs : </h3>
-            <p>Les pipes impurs sont utilisés lorsque les transformations ne 
-                dépendent pas uniquement des entrées, par exemple :</p>
+            <hr>
+
+            <h3>2. Les pipes impurs : </h3>
+            <p>Les pipes impurs sont utilisés lorsque les transformations ne dépendent pas uniquement des entrées, <strong>par exemple : </strong></p>
+
                 <ul>
                     <li><p>Si l'output du pipe dépend d'une source de données externe
                         ou d'un état changeant constamment.</p></li>
@@ -99,11 +115,10 @@
             <p><strong>Exemple de pipe impur :</strong></p>
             <img [src]="imageUrl3">
             <div class="concept demo">
-                <li><strong>Résultat :</strong></li>
-
-                <p><strong>Effectuez un changement : <input [(ngModel)]="forChange"></strong></p>
+                <h3>Résultat :</h3>
+                <input class="custom-input" [(ngModel)]="forChange">
                 <p><strong>=> </strong>{{forChange}}</p>
-                <p><strong>💡Même si la variable ne change pas dans le code TypeScript,
+                <p class="warning"><strong>💡 Même si la variable ne change pas dans le code TypeScript,
                 le pipe va générer un nouveau nombre aléatoire à chaque détection de changement.</strong></p>
             </div>
 

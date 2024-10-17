@@ -15,6 +15,7 @@ export class UserFormComponent implements OnChanges {
     name: '',
     email: ''
   };
+  
   isEditing = false;
 
   constructor(private userService: UserService) {}

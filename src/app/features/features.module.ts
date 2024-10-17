@@ -2,8 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { FeaturesRoutingModule } from './features-routing.module';
-import { SharedModule } from '../shared/shared.module';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -11,7 +9,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     FeaturesRoutingModule,
+    // Plus besoin d'importer les modules Exercices & Démos ici puisqu'ils sont déjà chargés via le lazy loading du FeaturesRoutingModule !
   ],
-  exports: []
+  exports: [
+    // Les modules enfants n'ont plus besoin d'être exportés car le routing les charge dynamiquement
+  ]
 })
 export class FeaturesModule { }

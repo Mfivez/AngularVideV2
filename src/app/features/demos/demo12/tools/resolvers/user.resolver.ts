@@ -11,9 +11,6 @@ export class UserResolver implements Resolve<User | null>  {
   constructor (private userService: UserService) { }
 
   resolve (route: ActivatedRouteSnapshot, state: RouterStateSnapshot): User | null {
-    console.log("UserResolver  resolve  state:", state)
-    console.log("UserResolver  resolve  route:", route)
-
     const userId = route.paramMap.get('id')
     return userId ? this.userService.getUserById(userId) : null
   }

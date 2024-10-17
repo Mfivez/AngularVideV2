@@ -7,14 +7,14 @@
 
     <section class="content-section">
 
-        <div class="concept gray">
+        <div class="concept">
             <h2>Qu'est-ce qu'un Service en Angular ?</h2>
             <p>
                 Un <strong>service</strong> en Angular est une classe qui contient des méthodes réutilisables que plusieurs composants peuvent appeler. 
                 Un service permet de <strong>centraliser la logique métier</strong> (tâches telles que les appels HTTP, la gestion de données, etc.) 
                 en dehors des composants pour respecter le principe de <strong>séparation des préoccupations</strong>.
             </p>
-            <p>Exemple : récupérer des données d'une API, stocker des informations partagées entre composants.</p>
+            <p><strong>Exemple :</strong> récupérer des données d'une API, stocker des informations partagées entre composants.</p>
         </div>
 
         <div class="concept">
@@ -23,21 +23,27 @@
                 Les services offrent de nombreux avantages :
             </p>
             <ul>
-                <li><strong>Réutilisation du code :</strong> Un service permet d'éviter la duplication du code dans plusieurs composants.</li>
-                <li><strong>Organisation :</strong>  La logique métier est séparée des composants, facilitant ainsi la maintenance et la lisibilité du code.</li>
-                <li><strong>Centralisation des données :</strong> Un service peut contenir et gérer des informations partagées par plusieurs composants.</li>
+                <li>
+                    <p><strong>Réutilisation du code :</strong> Un service permet d'éviter la duplication du code dans plusieurs composants.</p>
+                </li>
+
+                <li>
+                    <p><strong>Organisation :</strong>  La logique métier est séparée des composants, facilitant ainsi la maintenance et la lisibilité du code.</p>
+                </li>
+
+                <li>
+                    <p><strong>Centralisation des données :</strong> Un service peut contenir et gérer des informations partagées par plusieurs composants.</p>
+                </li>
             </ul>
         </div>
 
         
         <div class="concept">
             <h2>Qu'est-ce que l'Injection de Dépendances (DI) ?</h2>
-            <p>
-                L'<strong>Injection de Dépendances</strong> est un <strong>design pattern</strong> qui consiste à fournir une dépendance (comme un service) à une classe plutôt 
-                que de la laisser créer elle-même cette dépendance.
-                Angular a un <strong>système intégré d'injection de dépendances</strong>, qui permet de fournir automatiquement les services dont les composants ou 
-                d'autres services ont besoin.
-            </p>
+
+            <p>L'<strong>Injection de Dépendances</strong> est un <strong>design pattern</strong> qui consiste à fournir une dépendance (comme un service) à une classe plutôt que de la laisser créer elle-même cette dépendance.</p>
+
+            <p>Angular a un <strong>système intégré d'injection de dépendances</strong>, qui permet de fournir automatiquement les services dont les composants ou d'autres services ont besoin.</p>
             <p>
                 Par exemple, au lieu qu'un composant crée une instance d'un service lui-même, Angular l'injecte automatiquement :
             </p>
@@ -60,6 +66,8 @@
                 La propriété <code>providedIn: 'root'</code> indique que le service est disponible au niveau global 
                 (dans toute l'application). Cela signifie que n'importe quel composant peut y avoir accès.
             </p>
+            
+            <hr>
 
             <h3>2. Injection d'un Service dans un Composant</h3>
             <p>
@@ -67,8 +75,7 @@
                 Angular se charge de fournir automatiquement le service via son système d'injection de dépendances.
             </p>
             <img [src]="componentJsUrl">
-            <p>Dans cet exemple, le service <code>MyService</code> est injecté dans le constructeur du composant 
-                <code>AppComponent</code>. La méthode <code>getData()</code> du service est appelée pour récupérer 
+            <p>Dans cet exemple, le service <code>MyService</code> est injecté dans le constructeur du composant <code>AppComponent</code>. La méthode <code>getData()</code> du service est appelée pour récupérer 
                 des données, qui sont ensuite stockées dans la propriété <code>data</code> du composant.
             </p>
         </div>
@@ -79,13 +86,19 @@
                 La portée d'un service détermine où il peut être utilisé dans l'application.
             </p>
             <ul>
-                <li><strong>Portée globale (providedIn: 'root')</strong> : Le service est disponible dans toute 
-                    l'application, peu importe le composant.</li>
-                <li><strong>Portée locale</strong> : Si un service est ajouté au tableau 
+                <li>
+                    <p><strong>Portée globale (providedIn: 'root')</strong> : Le service est disponible dans toute 
+                    l'application, peu importe le composant.</p>
+                </li>
+
+                <li>
+                    <p><strong>Portée locale</strong> : Si un service est ajouté au tableau 
                     <code>providers</code> d'un module ou d'un composant, il sera disponible uniquement pour 
-                    ce module ou ce composant.</li>
+                    ce module ou ce composant.</p>
+                </li>
             </ul>
-            <p>Exemple d'ajout d'un service avec portée locale :</p>
+            <hr>
+            <h3>Exemple :</h3>
             <img [src]="localServiceUrl">
         </div>
 

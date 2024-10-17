@@ -7,6 +7,7 @@ import { NavigateService } from '../shared/services/navigate.service';
   styleUrl: './theorie6.component.scss'
 })
 export class Theorie6Component {
+  imageUrl1: String = "assets/directives/highlight.png"
 
   constructor(public nav: NavigateService) {}
 

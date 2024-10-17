@@ -1,6 +1,30 @@
 <div class="page-wrapper">
     <section class="hero-section">
-      <h1>Exercices - Interceptor</h1>  
+      <h1>Exercices - Interceptor</h1> 
+      <button class="cta-button" (click)="nav.navigate('/exos/12')">⏮️</button> 
       <button class="cta-button" (click)="nav.navigate('/theorie/15')">🟦 Théorie 🟦</button>
         <button class="cta-button" (click)="nav.navigate('/demos/16')">🟪 Démonstration 🟪</button>
     </section>
+
+    <section class="content-section">
+      <div class="concept">
+        <h2>Enoncé :</h2>
+        <p>Utiliser un Interceptor pour ajouter un token d'authentification et gérer les erreurs.</p>
+        <hr>
+        <h2>Objectifs :</h2>
+        <p>Créer un interceptor qui ajoutera un token d'authentification (simulé) dans chaque requête sortante</p>
+        <p>Gérer les erreurs globales, par exemple, si une requête retourne un stat 401 (Unauthorized), rediriger l'utilisateur vers la page de login.</p>
+        <p>(Optionnel) : Ajouter un loader qui s'affiche pendant les requêtes HTTP.</p>
+      </div>
+
+      <div class="concept">
+        @if (loaderService.isLoading()) {
+          <div class="loader">Chargement</div>
+        }
+        @else () {
+          <app-pokemon/>
+        }
+      </div>
+    </section>
+
+

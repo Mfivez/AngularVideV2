@@ -35,14 +35,6 @@ export class UserListComponent implements OnInit {
     })
   }
 
-  loadUsersWithOptions(): void {
-    this.userService.getUsersWithOptions().subscribe({
-      next: (data) => this.users = data,
-      error: (err) => console.error('Erreur :', err),
-      complete: () => console.log('Requête terminée')
-    });
-  }
-
   deleteUser(id: number): void {
     this.userService.deleteUser(id).subscribe(() => {
       this.users = this.users.filter(user => user.id !== id)

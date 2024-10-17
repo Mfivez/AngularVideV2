@@ -1,12 +1,15 @@
 <div class="page-wrapper">
     <section class="hero-section">
       <h1>Démonstration Router & Guard</h1>  
+      <button class="cta-button" (click)="nav.navigate('/demos/11')"> ⏮️</button>
+      <button class="cta-button" (click)="nav.navigate('/demos/13')">⏭️</button>
     </section>
   
     <section id="concepts" class="content-section">
         <app-router-class/>
         <app-guards/>
         <app-resolvers/>
+        
         <button class="cta-button" (click)="nav.navigate('/exos/8')">🟩 Exercices 🟩</button>
     </section>
   </div>

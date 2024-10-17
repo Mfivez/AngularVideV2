@@ -1,22 +1,22 @@
 <div class="page-wrapper">
-    <section class="hero-section">
-      <h1>Pokémon - Détails :</h1>
-      @if (selectedPokemon) {
-        <div class="pokemon-details">
-          <div class="pokemon-image">
-            <img [src]="selectedPokemon.sprites.front_default" alt="{{ selectedPokemon.name }}">
-          </div>
-  
-          <div class="pokemon-info">
-            <h2>{{ selectedPokemon.name | titlecase }} :</h2>
-            <p><strong>Type(s) :</strong> {{ getPokemonTypes() | titlecase }}</p>
-            <p><strong>Poids :</strong> {{ selectedPokemon.weight }}</p>
-            <p><strong>Taille :</strong> {{ selectedPokemon.height }}</p>
-          </div>
+  <section class="hero-section">
+    <h1>Pokémon - Détails :</h1>
+    @if (selectedPokemon) {
+      <div class="pokemon-details">
+        <div class="pokemon-image">
+          <img [src]="selectedPokemon.sprites.front_default" alt="{{ selectedPokemon.name }}">
         </div>
-      }
-      @else {
-        <p>Aucun Pokémon sélectionné.</p>
-      }
-    </section>
-  </div>
+
+        <div class="pokemon-info">
+          <h2>{{ selectedPokemon.name | titlecase }} :</h2>
+          <p><strong>Type(s) :</strong> {{ getPokemonTypes() | titlecase }}</p>
+          <p><strong>Poids :</strong> {{ selectedPokemon.weight }}</p>
+          <p><strong>Taille :</strong> {{ selectedPokemon.height }}</p>
+        </div>
+      </div>
+    }
+    @else {
+      <p>Aucun Pokémon sélectionné.</p>
+    }
+  </section>
+</div>

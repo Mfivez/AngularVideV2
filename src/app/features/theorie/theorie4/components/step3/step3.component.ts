@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrl: './step3.component.scss'
 })
 export class Step3Component {
-
+  imageUrl1: String = "assets/navBar/navBar.png"
 }

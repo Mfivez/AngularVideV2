@@ -13,7 +13,6 @@ import { NavigateService } from '../../theorie/shared/services/navigate.service'
 export class Demo15Component {
   products: Product[] = [];
   paginatedProducts: Product[] = [];
-  isCrudOpenMode: number = 0;
   currentPage: number = 1;
   totalPages: number = 0;
   pageSize: number = 5;

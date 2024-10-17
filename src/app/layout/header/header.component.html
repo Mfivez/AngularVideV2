@@ -3,7 +3,7 @@
   <nav>
     <ul>
       <li class="has-submenu">
-        <a routerLink="/theorie" routerLinkActive="active">Théorie</a>
+        <a>Théorie</a>
         <ul class="submenu">
           @for (item of TheoMenuItems; track $index) {
             <li><a routerLink="/theorie/{{item.id}}" >{{item.name}}</a></li>
@@ -12,7 +12,7 @@
       </li>
 
       <li class="has-submenu">
-        <a routerLink="/demos" routerLinkActive="active">Démonstrations</a>
+        <a>Démonstrations</a>
         <ul class="submenu">
           @for (item of demoMenuItems; track $index) {
             @if (item.id != "1" && item.id != "2" && item.id != "3") {
@@ -23,7 +23,7 @@
       </li>
 
       <li class="has-submenu">
-        <a routerLink="/exos" routerLinkActive="active">Exercices</a>
+        <a>Exercices</a>
         <ul class="submenu">
           @for (item of ExoMenuItems; track $index) {
             <li><a routerLink="/exos/{{item.id}}">{{item.name}}</a></li>

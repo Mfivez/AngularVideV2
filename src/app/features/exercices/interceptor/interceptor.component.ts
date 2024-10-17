@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavigateService } from '../../theorie/shared/services/navigate.service';
+import { LoaderService } from './tools/loader.service';
 
 @Component({
   selector: 'app-interceptor',
@@ -7,5 +8,5 @@ import { NavigateService } from '../../theorie/shared/services/navigate.service'
   styleUrl: './interceptor.component.scss'
 })
 export class InterceptorComponent {
-  constructor(public readonly nav: NavigateService) {}
+  constructor(public readonly nav: NavigateService, public loaderService: LoaderService) {}
 }

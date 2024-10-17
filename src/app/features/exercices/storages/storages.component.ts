@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
   templateUrl: './storages.component.html',
   styleUrl: './storages.component.scss'
 })
-export class StoragesComponent implements OnInit {
+export class StoragesComponent{
   pseudo: string | null = null;
   welcomeMessage: string | null = null;
 

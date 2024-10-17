@@ -33,6 +33,7 @@ nav {
       
       a {
         color: $text-color;
+        cursor: pointer;
         padding: 0.5rem 1rem;
         transition: background-color 0.3s, color 0.3s;
         white-space: nowrap;

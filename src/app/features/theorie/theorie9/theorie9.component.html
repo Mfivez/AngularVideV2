@@ -6,7 +6,7 @@
     </section>
 
     <section class="content-section">
-        <div class="concept gray">
+        <div class="concept">
             <h2>Introduction :</h2>
             <p>En Angular, la communication entre composants est essentielle et se fait principalement grâce aux propriétés 
                 <code>&#64;Input</code> et <code>&#64;Output</code>, qui permettent de passer des données du parent vers 
@@ -20,17 +20,16 @@
                 La propriété <code>&#64;Input</code> permet à un composant enfant de recevoir des données depuis 
                 son composant parent. Il s'agit de passer des valeurs du parent à l'enfant.
             </p>
-            <p><strong>Exemple :</strong></p>
-
+            <hr>
             <h3>1. Composant enfant - ts :</h3>
             <img [src]="inputChildUrl">
-
+            <hr>
             <h3>2. Composant enfant - html :</h3>
             <img [src]="inputChildHtmlUrl">
-
+            <hr>
             <h3>3. Composant enfant - ts :</h3>
             <img [src]="inputParentUrl">
-
+            <hr>
             <h3>4. Composant enfant - html :</h3>
             <img [src]="inputParentHtmlUrl">
 
@@ -42,17 +41,16 @@
                 La propriété <code>&#64;Output</code> permet à un composant enfant d'émettre des événements 
                 vers son composant parent. Cela se fait via un <code>EventEmitter</code>.
             </p>
-            <p><strong>Exemple :</strong></p>
-
+            <hr>
             <h3>1. Composant enfant - ts :</h3>
             <img [src]="outputChildUrl">
-
+            <hr>
             <h3>2. Composant enfant - html :</h3>
             <img [src]="outputChildHtmlUrl">
-
+            <hr>
             <h3>3. Composant parent - ts :</h3>
             <img [src]="outputParentUrl">
-
+            <hr>
             <h3>4. Composant parent - html :</h3>
             <img [src]="outputParentHtmlUrl">
 
@@ -65,20 +63,19 @@
                 En combinant <code>&#64;Input</code> et <code>&#64;Output</code>, on peut créer une communication 
                 bidirectionnelle entre un composant parent et un composant enfant.
             </p>
-            <p><strong>Exemple :</strong></p>
-
-            <h3>0. Importer le FormsModule pour pouvoir utiliser le ngModel :</h3>
+            <hr>
+            <h3>0. Importer le FormsModule pour utiliser le ngModel :</h3>
             <img [src]="bidirectionalImportUrl">
-
+            <hr>
             <h3>1. Composant enfant - ts :</h3>
             <img [src]="bidirectionalChildUrl">
-
+            <hr>
             <h3>2. Composant enfant - html :</h3>
             <img [src]="bidirectionalChildHtmlUrl">
-
+            <hr>
             <h3>3. Composant parent - ts :</h3>
             <img [src]="bidirectionalParentUrl">
-
+            <hr>
             <h3>4. Composant parent - html :</h3>
             <img [src]="bidirectionalParentHtmlUrl">
         </div>

@@ -18,6 +18,7 @@ import { InterceptorComponent } from './interceptor/interceptor.component';
 import { StoragesModule } from './storages/storages.module';
 import { ObservablesModule } from './observables/observables.module';
 import { HttpClientModule } from './http-client/http-client.module';
+import { PokemonComponent } from './interceptor/components/pokemon/pokemon.component';
 
 
 @NgModule({
@@ -33,6 +34,7 @@ import { HttpClientModule } from './http-client/http-client.module';
     ContactFormComponent,
     ServiceInjectionComponent,
     InterceptorComponent,
+    PokemonComponent,
   ],
   imports: [
     CommonModule,
