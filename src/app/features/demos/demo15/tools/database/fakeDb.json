@@ -1,34 +1,14 @@
 {
   "products": [
     {
-      "id": "564d",
       "name": "aze",
-      "price": 213
+      "price": 213,
+      "id": "1"
     },
     {
-      "id": "65a2",
-      "name": "AZE",
+      "id": "2",
+      "name": "NaCl",
       "price": 1
-    },
-    {
-      "id": "a37d",
-      "name": "123",
-      "price": 123
-    },
-    {
-      "id": "b0b0",
-      "name": "123",
-      "price": 123
-    },
-    {
-      "id": "b579",
-      "name": "123",
-      "price": 123
-    },
-    {
-      "id": "b73b",
-      "name": "123",
-      "price": 123
     }
   ]
 }

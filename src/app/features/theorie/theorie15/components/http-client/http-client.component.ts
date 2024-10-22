@@ -18,5 +18,7 @@ export class HttpClientComponent {
   imageUrl10: string = "assets/httpClient/handleError2.png";
   imageUrl11: string = "assets/httpClient/post.png";
   imageUrl12: string = "assets/httpClient/httpObservable.png";
+  imageUrl13: string = "assets/httpClient/jsonFile.png";
+  imageUrl14: string = "assets/httpClient/startServe.png";
 
 }
