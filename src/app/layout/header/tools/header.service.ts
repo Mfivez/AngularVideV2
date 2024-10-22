@@ -24,7 +24,7 @@ export class HeaderService {
   getExoMenuItems(): MenuItem[] {
     return this.getMappedMenu([
       "Composants", "Routing", "Binding", "Directives", "Pipes", "Cycles de vie",
-      "Input | Output", "Formulaire", "Router | Guards | Resolver", "Storages",
+      "Input | Output", "Services | Injection", "Formulaire", "Router | Guards | Resolver", "Storages",
       "Observables", "HttpClient", "Interceptor"
     ])
     }

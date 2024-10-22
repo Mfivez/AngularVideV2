@@ -1,0 +1,23 @@
+<div class="concept">
+    <table>
+        <thead>
+            <th>Nom</th>
+            <th>Quantité</th>
+            <th>Action</th>
+            
+        </thead>
+        <tbody>
+            @for (item of items; track $index) {
+                <tr>
+                    <td>{{ item.name }}</td>
+                    <td>
+                        <button class="cta-button" (click)='changeQuantity($index, -1)'>-</button>
+                        {{ item.qte }}
+                        <button class="cta-button" (click)='changeQuantity($index, 1)'>+</button>
+                    </td>
+                    <td><button class="cta-button" (click)="removeItem($index)">Supprimer</button></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

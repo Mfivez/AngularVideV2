@@ -7,5 +7,7 @@ import { NavigateService } from '../../theorie/shared/services/navigate.service'
   styleUrl: './binding.component.scss'
 })
 export class BindingComponent {
+  imageUrl1: String = "assets/exos/binding/position.png"
+
   constructor(public readonly nav: NavigateService) {}
 }

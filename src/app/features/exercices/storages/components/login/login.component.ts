@@ -16,7 +16,7 @@ export class LoginComponent {
     if (this.pseudo) {
       this.storageService.setUserPseudo(this.pseudo);
       this.storageService.setWelcomeMessage(`Bienvenue ${this.pseudo}!`);
-      this.router.navigate(['/exos/10']);
+      this.router.navigate(['/exos/11']);
     }
   }
 }

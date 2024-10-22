@@ -1,8 +1,33 @@
 <div class="page-wrapper">
     <section class="hero-section">
         <h1>Exercices - Binding</h1>
-        <button class="cta-button" (click)="nav.navigate('/exos/1')">⏮️</button>
+        <button class="cta-button" (click)="nav.navigate('/exos/2')">⏮️</button>
         <button class="cta-button" (click)="nav.navigate('/theorie/5')">🟦 Théorie 🟦</button>
         <button class="cta-button" (click)="nav.navigate('/demos/5')">🟪 Démonstration 🟪</button>
-        <button class="cta-button" (click)="nav.navigate('/exos/3')">⏭️</button>
+        <button class="cta-button" (click)="nav.navigate('/exos/4')">⏭️</button>
+    </section>
+
+    <section class="content-section">
+        <div class="concept">
+            <h2>Enoncé :</h2>
+            <p>Faire en sorte de remplir l'affichage du menu ci-dessous avec vos informations personelles :</p>
+            <ul>
+                <li><p><strong>Nom complet :</strong> Nom + prénom <code>via l'interpolation</code></p></li>
+                <li><p><strong>Email :</strong> Remplir le champ <code>via Property Binding</code>
+                </p></li>
+                <li><p><strong>Modifier prénom :</strong> Faire en sorte que l'on puisse modifier le prénom de l'utilisateur depuis l'input <code>via le two-way binding.</code></p></li>
+            </ul>
+        </div>
+
+        <app-user-profile/>
+
+        <div class="concept">
+            <h2>Notes :</h2>
+            <p class="warning">
+                Pour réaliser l'exercice rendez-vous dans le composant <code>user-profile</code>😎
+            </p>
+            <img [src]="imageUrl1">
+
+        </div>
+        
     </section>

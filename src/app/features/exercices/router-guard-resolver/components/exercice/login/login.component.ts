@@ -12,6 +12,6 @@ export class LoginComponent {
 
   login() {
     this.authService.login();
-    this.router.navigate(['/exos/8']);
+    this.router.navigate(['/exos/10']);
   }
 }

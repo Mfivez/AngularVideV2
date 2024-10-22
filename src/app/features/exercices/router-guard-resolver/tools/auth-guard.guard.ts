@@ -9,7 +9,7 @@ export const authGuardGuard: CanActivateFn = (route, state) => {
   if (auth.isAuthenticated()) return true
 
   else {
-    router.navigate(['exos/8/login'])
+    router.navigate(['exos/10/login'])
     return false
   }
 };

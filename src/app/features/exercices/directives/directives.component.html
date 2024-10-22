@@ -2,10 +2,10 @@
     <section class="hero-section">
         
         <h1>Exercice : Directives</h1>
-        <button class="cta-button" (click)="nav.navigate('/exos/2')">⏮️</button>
+        <button class="cta-button" (click)="nav.navigate('/exos/3')">⏮️</button>
         <button class="cta-button" (click)="nav.navigate('/theorie/6')">🟦 Théorie 🟦</button>
         <button class="cta-button" (click)="nav.navigate('/demos/6')">🟪 Démonstration 🟪</button>
-        <button class="cta-button" (click)="nav.navigate('/exos/4')">⏭️</button>
+        <button class="cta-button" (click)="nav.navigate('/exos/5')">⏭️</button>
     </section>
 
     <section class="content-section">
@@ -26,6 +26,15 @@
                 <li><p>Si un produit est en promo, on affiche son prix normal barré et son prix promo en rouge.</p></li>
                 <li><p>Si un produit n'est plus disponible (qtt 0), afficher qu'il ne l'est plus.</p></li>
             </ul>
+        </div>
+
+        <app-list-view/>
+
+        <div class="concept">
+            <h2>Notes :</h2>
+            <p class="warning">
+                Notez qu'un dossier nommé <code>assetsExo</code> se trouve dans le dossier public dans lequel vous pouvez déposer les images de vos articles 😎 !
+            </p>
         </div>
     </section>
 </div>

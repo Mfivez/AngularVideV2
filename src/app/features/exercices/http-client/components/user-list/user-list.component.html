@@ -12,15 +12,17 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let user of users">
-        <td>{{ user.id }}</td>
-        <td>{{ user.name }}</td>
-        <td>{{ user.email }}</td>
-        <td>
-            <button class="cta-button" (click)="editUser(user)">Modifier</button>
-            <button class="cta-button" (click)="deleteUser(user.id)">Supprimer</button>
-        </td>
-        </tr>
+        @for (user of users; track $index) {
+            <tr>
+                <td>{{ user.id }}</td>
+                <td>{{ user.name }}</td>
+                <td>{{ user.email }}</td>
+                <td>
+                <button class="cta-button" (click)="editUser(user)">Modifier</button>
+                <button class="cta-button" (click)="deleteUser(user.id)">Supprimer</button>
+                </td>
+            </tr>
+        }
     </tbody>
     </table>
 

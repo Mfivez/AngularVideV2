@@ -1,0 +1,16 @@
+<div class="concept">
+    <table>
+        <thead>
+            <th>Nom</th>
+            <th>Action</th>
+        </thead>
+        <tbody>
+            @for (item of items; track $index) {
+                <tr>
+                    <td>{{ item }}</td>
+                    <td><button class="cta-button" (click)="removeItem($index)">Supprimer</button></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

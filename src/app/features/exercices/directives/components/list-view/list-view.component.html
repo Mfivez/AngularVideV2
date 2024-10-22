@@ -1,0 +1,40 @@
+<div class="concept">
+    <h2>Correction : </h2>
+    <table>
+        <thead>
+            <tr>
+            <th>Nom</th>
+            <th>Photo</th>
+            <th>Prix</th>
+            <th>Quantité</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+        </tbody>
+    
+    
+        <tbody>
+            @for (p of productList; track $index) {
+                <tr>
+                    <td>{{p.nom}}</td>
+                    <td><img style="width: 100px; height: 100px; margin: 0 auto;" [src]="p.photo"></td>
+                    @if (p.enPromo) {
+                        <td>
+                            <span style="text-decoration: line-through;">{{p.prix}}€</span> 
+                            <span class="warning"> {{p.prixPromo}}€</span></td>
+                    } @else {
+                        <td>{{p.prix}}</td>
+                    }
+                    @if (p.qttRestante != 0) {
+                        <td>{{p.qttRestante}}</td>
+                    } @else {
+                        <td class="warning">Plus disponible❗</td>
+                    }
+                    
+                </tr>   
+            }
+        </tbody>
+    </table>
+
+</div>

@@ -20,6 +20,16 @@ import { ObservablesModule } from './observables/observables.module';
 import { HttpClientModule } from './http-client/http-client.module';
 import { PokemonComponent } from './interceptor/components/pokemon/pokemon.component';
 import { RoutingComponent } from './routing/routing.component';
+import { UserProfileComponent } from './binding/components/user-profile/user-profile.component';
+import { ListViewComponent } from './directives/components/list-view/list-view.component';
+import { ChronoComponent } from './pipes/components/chrono/chrono.component';
+import { TimerComponent } from './cycles-de-vie/components/timer/timer.component';
+import { AddItemComponent } from './input-output/components/add-item/add-item.component';
+import { ItemListComponent } from './input-output/components/item-list/item-list.component';
+import { ShoppingViewComponent } from './input-output/components/shopping-view/shopping-view.component';
+import { AddComponent } from './service-injection/components/add-item/add-item.component';
+import { ListComponent } from './service-injection/components/item-list/item-list.component';
+import { ShoppingComponent } from './service-injection/components/shopping-view/shopping-view.component';
 
 
 @NgModule({
@@ -37,6 +47,16 @@ import { RoutingComponent } from './routing/routing.component';
     InterceptorComponent,
     PokemonComponent,
     RoutingComponent,
+    UserProfileComponent,
+    ListViewComponent,
+    ChronoComponent,
+    TimerComponent,
+    AddItemComponent,
+    ItemListComponent,
+    ShoppingViewComponent,
+    AddComponent,
+    ListComponent,
+    ShoppingComponent
   ],
   imports: [
     CommonModule,

@@ -1,32 +1,17 @@
 <div class="page-wrapper">
     <section class="hero-section">
         <h1>Exercices : Cycle de Vie des Composants</h1>
-        <button class="cta-button" (click)="nav.navigate('/exos/4')">⏮️</button>
+        <button class="cta-button" (click)="nav.navigate('/exos/5')">⏮️</button>
         <button class="cta-button" (click)="nav.navigate('/theorie/8')">🟦 Théorie 🟦</button>
         <button class="cta-button" (click)="nav.navigate('/demos/8')">🟪 Démonstration 🟪</button>
-        <button class="cta-button" (click)="nav.navigate('/exos/6')">⏭️</button>
+        <button class="cta-button" (click)="nav.navigate('/exos/7')">⏭️</button>
     </section>
 
     <section class="content-section">
-
-        <div class="concept gray">
-            <h2>Exercice 1 : </h2>
+        <div class="concept">
+            <h2>Enoncé : </h2>
             <p>Créer un composant qui démarre un timer à l'initialisation et l'arrête avant sa destruction.</p>
         </div>
-
-        <div class="concept gray">
-            <h2>Exercice 2 : </h2>
-            <p>Créez un composant parent <code>ParentComponent</code> qui projettera du contenu dans un enfant <code>ChildComponent</code>.</p>
-        </div>
-
-        <div class="concept gray">
-            <h2>Exercice 3 :</h2>
-            <p>
-                Utiliser les hooks liés à l'initialisation et à la vérification des vues enfants pour créez un 
-                composant nommé <code>ViewChildComponent</code> qui contient du contenu dynamique.
-            </p>
-
-        </div>
-
+        <app-timer/>
     </section>
 </div>

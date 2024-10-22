@@ -1,20 +1,15 @@
 <div class="page-wrapper">
     <section class="hero-section">
       <h1>Exercices - Routing</h1>  
+      <button class="cta-button" (click)="nav.navigate('/exos/1')">⏮️</button>
+        <button class="cta-button" (click)="nav.navigate('/theorie/3')">🟦 Théorie 🟦</button>
+        <button class="cta-button" (click)="nav.navigate('/exos/3')">⏭️</button>
 
     </section>
   
     <section id="concepts" class="content-section">
         <div class="concept">
             <h2>Enoncé :</h2>
-            <p>
-                Dans un nouveau projet, mettre en place 2 modules : (Demos & Exercices).
-            </p>
-            <p>
-                Ceux-ci devront comprendre un composant chacun et un routing spécifique.
-            </p>
-            <p>
-                Créer un composant de navigation et l'inclure au template de base (menu à gauche de la page)
-            </p>
-            <p>Tous les composants et modules devront être accessible depuis la page d'acceuil de l'application.</p>
+            <p>Créer un nouveau module nommé <code>Theories</code> contenant un composant <code>theorie1</code> et mettre en place son routing spécifique.</p>
+            <p>Vérifier depuis l'url que le routing du composant fonctionne.</p>
 

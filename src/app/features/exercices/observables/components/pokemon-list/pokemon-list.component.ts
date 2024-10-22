@@ -23,7 +23,7 @@ export class PokemonListComponent implements OnInit {
   selectPokemon(pokemon: any): void {
     this.pokeService.getPokemonDetails(pokemon.name).subscribe( (details) => {
       this.pokeService.selectPokemon(details)
-      this.router.navigate(['exos/11/pokemon-detail'])
+      this.router.navigate(['exos/12/pokemon-detail'])
     })
   }
 }
