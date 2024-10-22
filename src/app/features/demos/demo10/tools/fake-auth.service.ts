@@ -5,7 +5,6 @@ import { ApiService } from './api.service';
   providedIn: 'root',
 })
 export class FakeAuthService {
-
   private auth: boolean = false;
   message: string = '';
 

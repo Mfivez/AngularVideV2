@@ -19,6 +19,7 @@ import { StoragesModule } from './storages/storages.module';
 import { ObservablesModule } from './observables/observables.module';
 import { HttpClientModule } from './http-client/http-client.module';
 import { PokemonComponent } from './interceptor/components/pokemon/pokemon.component';
+import { RoutingComponent } from './routing/routing.component';
 
 
 @NgModule({
@@ -35,6 +36,7 @@ import { PokemonComponent } from './interceptor/components/pokemon/pokemon.compo
     ServiceInjectionComponent,
     InterceptorComponent,
     PokemonComponent,
+    RoutingComponent,
   ],
   imports: [
     CommonModule,

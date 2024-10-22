@@ -6,59 +6,34 @@ export class HeaderService {
   constructor() {}
 
   getDemoMenuItems(): MenuItem[] {
-    return [
-      {id:"5" , name:'Binding'},
-      {id:"6" , name:'Directives'},
-      {id:"7" , name:'Pipes'},
-      {id:"8" , name:'Cycles de vie'},
-      {id:"9" , name:'Input | Output'},
-      {id:"10" , name:'Services | Injection'},
-      {id:"11" , name:'Formulaires'},
-      {id:"12" , name:'Router | Guards | Resolver'},
-      {id:"13" , name:'Storages'},
-      {id:"14" , name:'Observables'},
-      {id:"15" , name:'HttpClient'},
-      {id:"16" , name:'Interceptor'},
-    ];
+    return this.getMappedMenu([
+      "Binding", "Directives", "Pipes", "Cycles de vie",
+      "Input | Output", "Services | Injection", "Formulaire", "Router | Guards | Resolver", "Storages",
+      "Observables", "HttpClient", "Interceptor"
+    ], 5)
     }
 
   getTheorieMenuItems(): MenuItem[] {
-  return [
-    {id:"1" , name:'Rappel : intro'},
-    {id:"2" , name:'Composants'},
-    {id:"3" , name:'Routing'},
-    {id:"4" , name:'NavBar'},
-    {id:"5" , name:'Binding'},
-    {id:"6" , name:'Directives'},
-    {id:"7" , name:'Pipes'},
-    {id:"8" , name:'Cycles de vie'},
-    {id:"9" , name:'Input | Output'},
-    {id:"10" , name:'Services | Injection'},
-    {id:"11" , name:'Formulaires'},
-    {id:"12" , name:'Router | Guards | Resolver'},
-    {id:"13" , name:'Storages'},
-    {id:"14" , name:'Observables'},
-    {id:"15" , name:'HttpClient'},
-  ];
+    return this.getMappedMenu([
+      "Rappel : Intro", "Composants", "Routing", "NavBar", "Binding", "Directives", "Pipes", "Cycles de vie",
+      "Input | Output", "Services | Injection", "Formulaire", "Router | Guards | Resolver", "Storages",
+      "Observables", "HttpClient"
+    ])
   }
 
   getExoMenuItems(): MenuItem[] {
-    return [
-      {id:"1" , name:'Composants'},
-      {id:"2" , name:'Binding'},
-      {id:"3" , name:'Directives'},
-      {id:"4" , name:'Pipes'},
-      {id:"5" , name:'Cycles de vie'},
-      {id:"6" , name:'Input | Output'},
-      {id:"9" , name:'Services | Injection'},
-      {id:"7" , name:'Seb Formulaire'},
-      {id:"8" , name:'Router | Guards | Resolver'},
-      {id:"10" , name:'Storage'},
-      {id:"11" , name:'Observables'},
-      {id:"12" , name:'HttpClient'},
-      {id:"13" , name:'Interceptor'},
-    ];
+    return this.getMappedMenu([
+      "Composants", "Routing", "Binding", "Directives", "Pipes", "Cycles de vie",
+      "Input | Output", "Formulaire", "Router | Guards | Resolver", "Storages",
+      "Observables", "HttpClient", "Interceptor"
+    ])
     }
+  
+  getMappedMenu(list: string[],startingId:number=1): MenuItem[] {
+    return list.map((value, index) => {
+      return { id: (startingId + index).toString(), name: value };
+    });
+  }
 
 }
 

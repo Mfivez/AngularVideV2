@@ -9,46 +9,19 @@
 
     <section class="content-section">
 
-        <div class="concept gray">
-            <h2>Exercice 1 : Utilisation de &#64;Input</h2>
-            <p>
-                Créez deux composants, un composant parent et un composant enfant. Le parent doit envoyer une
-                valeur texte (exemple : "Bonjour du parent") au composant enfant via l'attribut
-                <code>&#64;Input</code>.
-            </p>
-            <ul>
-                <li>Dans le composant parent, définissez un message.</li>
-                <li>Le composant enfant doit recevoir ce message et l'afficher dans sa vue.</li>
-            </ul>
-        </div>
+        <div class="concept">
+            <h2>Enoncé :</h2>
+            <p>Mettre en place une shopping list en 2 composants.</p>
 
-        <div class="concept gray">
-            <h2>Exercice 2 : Utilisation de &#64;Output</h2>
-            <p>
-                Implémentez une communication de l'enfant vers le parent en utilisant <code>&#64;Output</code>.
-                L'enfant doit disposer d'un bouton. Lorsqu'on clique dessus, un message est envoyé au
-                parent pour être affiché dans la vue du parent.
+            <p><strong>Dans le 1er :</strong></p>
+            <ul><li><p>Un champ textuel permettant l'ajout d'un article à la liste</p></li></ul>
+            <p><strong>Dans le 2nd :</strong></p>
+            <ul><li><p>L'affichage de la liste et la possibilité de supprimer un article.</p></li></ul>
+            <hr>
+            <p class="warning">
+                ⚠️ Les 2 composant doivent être affiché sur la même page !
             </p>
-            <ul>
-                <li>Dans le composant enfant, créez un bouton qui déclenche un événement via <code>&#64;Output</code>.</li>
-                <li>Le parent doit écouter cet événement et afficher un message reçu de l'enfant dans sa vue.</li>
-            </ul>
-        </div>
-
-        <div class="concept gray">
-            <h2>Exercice 3 : Liaison Bidirectionnelle</h2>
-            <p>
-                Créez une liaison bidirectionnelle entre un parent et un enfant en utilisant à la fois
-                <code>&#64;Input</code> et <code>&#64;Output</code>. L'enfant doit afficher un champ de texte dans lequel
-                vous pouvez modifier une valeur transmise par le parent, et chaque changement doit être reflété dans
-                le composant parent.
-            </p>
-            <ul>
-                <li>Le parent envoie une donnée à l'enfant via <code>&#64;Input</code>.</li>
-                <li>L'enfant modifie cette donnée dans un champ de saisie, et chaque modification est envoyée au parent via <code>&#64;Output</code>.</li>
-                <li>Le parent met à jour sa vue en fonction des changements effectués dans l'enfant.</li>
-            </ul>
-        </div>
+        </div>  
 
     </section>
 </div>

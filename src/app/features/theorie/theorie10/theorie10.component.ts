@@ -14,6 +14,7 @@ export class Theorie10Component {
   componentJsUrl: string = 'assets/services/componentJs.png'
   localServiceUrl: string = 'assets/services/localService.png'  
   serviceConstructorUrl: string = 'assets/services/serviceConstructor.png'
+  inject: string = 'assets/services/inject.png'
 
   data: string
 

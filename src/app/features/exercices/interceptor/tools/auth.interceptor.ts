@@ -15,12 +15,18 @@ export class AuthInterceptor implements HttpInterceptor {
 
     this.loaderService.setLoading(true);
 
-    const clonedRequest = req.clone({ setHeaders: { Authorization: `Bearer ${token}` } });
+    const clonedRequest = req.clone(
+      { setHeaders: 
+        { Authorization: `Bearer ${token}` } 
+      }
+    );
 
     return next.handle(clonedRequest).pipe(
       catchError((error: HttpErrorResponse) => {
-        if (error.status === 401) { this.router.navigate(['/login']); }
-        return throwError(() => error); }),
+        if (error.status === 401) { 
+          this.router.navigate(['/login']); }
+          return throwError(() => error); 
+        }),
       finalize(() => this.loaderService.setLoading(false))
     );
   }

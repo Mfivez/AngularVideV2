@@ -1,6 +1,7 @@
 <div class="page-wrapper">
     <section class="hero-section">
         <h1>Théorie - Services & Injection</h1>
+
         <button class="cta-button" (click)="nav.navigate('/theorie/9')"> ⏮️</button>
       <button class="cta-button" (click)="nav.navigate('/theorie/11')">⏭️</button>
     </section>
@@ -100,6 +101,18 @@
             <hr>
             <h3>Exemple :</h3>
             <img [src]="localServiceUrl">
+        </div>
+
+        <div class="concept">
+            <h2>La fonction <code>inject()</code> : </h2>
+            <p>En plus de l'injection de dépendances classique via le constructeur, nous pouvons depuis la version 14 d'Angular, utiliser la fonction inject().</p>
+            <p>Celle-ci permet d'injecter des services dans des composants ou des services de manière plus dynamique, en dehors du constructeur.</p>
+            <p>Elle est souvent utilisé dans les classes qui n'ont pas de constructeur explicite ou dass les hook comme <code>ngOnInit</code> ou encore dans les services qui n'ont pas de cycle de vie classique</p>
+
+            <hr>
+
+            <h3>Utilisation :</h3>
+            <img [src]="inject">
         </div>
 
         <button class="cta-button" (click)="nav.navigate('/demos/10')">🟪Démonstration🟪</button>
