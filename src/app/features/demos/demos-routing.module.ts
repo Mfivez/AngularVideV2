@@ -19,7 +19,6 @@ import { Demo18Component } from './demo18/demo18.component';
 import { Demo19Component } from './demo19/demo19.component';
 import { Demo20Component } from './demo20/demo20.component';
 import { Demo21Component } from './demo21/demo21.component';
-import { RouterClassComponent } from './demo12/components/router-class/router-class.component';
 
 const routes: Routes = [
   {path: '3', component: Demo3Component },
