@@ -12,6 +12,7 @@ export class HeaderComponent {
   demoMenuItems: MenuItem[] = []
   ExoMenuItems: MenuItem[] = []
   TheoMenuItems: MenuItem[] = []
+  TsMenuItems: MenuItem[] = []
 
 
   constructor(private headerService: HeaderService) {}
@@ -20,5 +21,6 @@ export class HeaderComponent {
     this.demoMenuItems = this.headerService.getDemoMenuItems();
     this.ExoMenuItems = this.headerService.getExoMenuItems();
     this.TheoMenuItems = this.headerService.getTheorieMenuItems();
+    this.TsMenuItems = this.headerService.getTsMenuItems();
   }
 }

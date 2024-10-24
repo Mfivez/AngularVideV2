@@ -29,6 +29,12 @@ export class HeaderService {
     ])
     }
   
+  getTsMenuItems(): MenuItem[] {
+    return this.getMappedMenu([
+      "Introduction", "Analyse du langage"
+    ])
+    }
+  
   getMappedMenu(list: string[],startingId:number=1): MenuItem[] {
     return list.map((value, index) => {
       return { id: (startingId + index).toString(), name: value };

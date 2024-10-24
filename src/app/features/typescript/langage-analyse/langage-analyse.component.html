@@ -1,0 +1,112 @@
+<div class="page-wrapper">
+    <section class="hero-section">
+        <h1>Concepts Avancés de TypeScript</h1>
+    </section>
+
+    <section class="content-section">
+
+        <div class="concept">
+            <h2>Types de Base</h2>
+            <p>
+                TypeScript permet de définir explicitement le type des variables et des fonctions. Voici les types les plus couramment utilisés :
+            </p>
+
+            <hr>
+            <h3>Number :</h3>
+            <p>Pour toutes les valeurs numériques (par exemple : 1, 3.14).</p>
+            <img [src]="imageUrl1">
+
+            <hr>
+            <h3>String :</h3>
+            <p>Pour les chaînes de caractères (par exemple : "Bonjour").</p>
+            <img [src]="imageUrl2">
+
+            <hr>
+            <h3>Boolean :</h3>
+            <p>Pour les valeurs vraies ou fausses (true, false).</p>
+            <img [src]="imageUrl3">
+
+            <hr>
+            <h3>Array :</h3>
+            <p>Pour les listes d'éléments d'un même type.</p>
+            <img [src]="imageUrl4">
+
+            <hr>
+            <h3>Any :</h3>
+            <p>Utilisé lorsque vous ne voulez pas restreindre le type d'une variable. Cependant, son utilisation doit être limitée car il annule les bénéfices du typage.</p>
+            <img [src]="imageUrl5">
+
+
+            <p>
+                Il existe d'autres types plus avancés comme <strong>null</strong>, <strong>undefined</strong>, et <strong>void</strong> pour des cas spécifiques.
+            </p>
+        </div>
+
+        <div class="concept">
+            <h2>Interfaces et Types</h2>
+            <p>
+                Les interfaces et les types sont deux outils permettant de structurer le code.
+            </p>
+
+            <hr>
+
+            <h3>Interface :</h3>
+            <p>En TypeScript, une interface permet de définir la structure d'un objet (propriétés, types de données,...)</p>
+            <img [src]="imageUrl6">
+
+            <hr>
+
+            <h3>Type :</h3>
+            <p>
+                Alternative aux interfaces définissant la structure de données de manière plus flexibles, car ils permettent de combiner plusieurs types ensemble.
+            </p>
+            <img [src]="imageUrl7">
+            <p class="warning">Ici Id peut prendre une valeur de type string ou number 😎</p>
+        </div>
+
+        <div class="concept">
+            <h2>Classe</h2>
+            <p>
+                Les classes en Ts sont similaires à celles que l'on retrouve dans d'autres langages orientés objets (comme Java, Python ou encore C#). Elles permettent de définir des objets complexes en encapsulant des données (propriétés) et des comportements (méthodes).
+            </p>
+            <img [src]="imageUrl8">
+            <hr>
+            <p>
+                Les classes facilitent l'organisation et la réutilisation du code, en plus de permettre de tirer parti de l'héritage, un concept où une classe peut hériter des propriétés et des méthodes d'une autre, pour éviter la duplication du code.
+            </p>
+        </div>
+
+        <div class="concept">
+            <h2>Héritage</h2>
+            <p>
+                TypeScript supporte aussi l'héritage, permettant à une classe d'hériter des propriétés et méthodes d'une autre classe.
+            </p>
+            <img [src]="imageUrl9">
+        </div>
+
+        <div class="concept">
+            <h2>Enumération</h2>
+            <p>
+                Les enums sont utilisés pour définir un ensemble de constantes nommées. Ils permettent d'attribuer des noms significatifs à des valeurs.
+            </p>
+            <img [src]="imageUrl10">
+        </div>
+
+        <div class="concept">
+            <h2>Tuples</h2>
+            <p>
+                Les tuples permettent de stocker plusieurs valeurs de types différents dans un seul tableau, avec un ordre spécifique.
+            </p>
+            <img [src]="imageUrl11">
+        </div>
+
+        <div class="concept">
+            <h2>Génériques</h2>
+            <p>
+                Les génériques permettent de créer des fonctions ou des classes qui peuvent fonctionner avec plusieurs types, sans être spécifiquement liés à un type en particulier rendant le code plus réutilisable.
+            </p>
+            <img [src]="imageUrl12">
+        </div>
+
+    </section>
+</div>

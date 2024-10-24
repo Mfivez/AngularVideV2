@@ -11,6 +11,8 @@ const routes: Routes = [
   //Liaison - module Demos à l'URL : 'http://localhost:4200/demos'
   { path: 'demos', loadChildren: () => import('./demos/demos.module').then(m => m.DemosModule) },
 
+  { path: 'ts', loadChildren: () => import('./typescript/typescript.module').then(m => m.TypescriptModule) },
+
   //Liaison - module Exercices à l'URL : 'http://localhost:4200/exos'
   { path: 'exos', loadChildren: () => import('./exercices/exercices.module').then(m => m.ExercicesModule) },
 
