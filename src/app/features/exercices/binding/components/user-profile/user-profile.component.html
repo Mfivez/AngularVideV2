@@ -1,16 +1,16 @@
 <div class="concept">
-    <h2>Profile :</h2>
+    <h2>Profile : </h2>
 
-    <p><strong>Nom complet:</strong></p>
+    <p><strong>Nom complet:</strong> {{ user.firstName }} {{ user.lastName }}</p>
 
 
-    <p><strong>Email :</strong></p>
+    <p><strong>Email : </strong><span [textContent]="user.email"></span></p>
 
     <hr>
 
     
     <span>
         <strong>Modifier le prénom : </strong></span>
-        <input class="custom-input"/>
+        <input class="custom-input" id="prenom" [(ngModel)]="user.firstName" placeholder="Entrez le prénom" />
    
 </div>

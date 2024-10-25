@@ -36,10 +36,37 @@
             <p>Utilisé lorsque vous ne voulez pas restreindre le type d'une variable. Cependant, son utilisation doit être limitée car il annule les bénéfices du typage.</p>
             <img [src]="imageUrl5">
 
+            <hr>
+            <h3>Unknow :</h3>
+            <p> Similaire à <code>any</code> mais plus strict ; avant d'utiliser une variable de type <code>unknown</code>, il est nécessaire de vérifier son type, ce qui rend le code plus sûr.</p>
+            <img [src]="imageUrl20">
 
+            <hr>
+            <h3>Never :</h3>
+            <p> Utilisé pour les fonctions qui ne terminent jamais ou pour des cas où une variable ne devrait jamais contenir de valeur. Par exemple, pour des fonctions qui lèvent des erreurs ou des boucles infinies.</p>
+            <img [src]="imageUrl21">
+
+            <hr>
+            <h3>Null :</h3>
+            <p>Il représente une valeur <strong>intentionnellement</strong> vide. Dans certains langages, null est utilisé pour indiquer l'absence d'une valeur ou que quelque chose n'est pas défini.</p>
+
+            <img [src]="imageUrl13">
+
+            <p>Par défaut, <code>null</code> est assignable uniquement aux types qui incluent <code>null</code> ou <code>any</code>.</p>
+            
+            <p>Si l'option <span class="warning">strictNullChecks</span> est activée dans le projet TypeScript, il devient nécessaire de déclarer explicitement quand une variable peut être null.</p>
+
+            <hr>
+            <h3>Undefined :</h3>
+            <p>undefined est un type qui représente une variable qui a été déclarée mais n'a pas encore reçu de valeur.</p>
+            <img [src]="imageUrl14">
+
+            <hr>
+            <h3>void :</h3>
             <p>
-                Il existe d'autres types plus avancés comme <strong>null</strong>, <strong>undefined</strong>, et <strong>void</strong> pour des cas spécifiques.
+                Principalement utilisé pour indiquer qu'une fonction ne retourne pas de valeur.
             </p>
+            <img [src]="imageUrl15">
         </div>
 
         <div class="concept">
@@ -62,6 +89,33 @@
             </p>
             <img [src]="imageUrl7">
             <p class="warning">Ici Id peut prendre une valeur de type string ou number 😎</p>
+            
+            <hr>
+            <h3>Intersection Types</h3>
+            <p>Les intersection types permettent de combiner plusieurs types en un seul, ce qui est utile pour des objets ou fonctions qui doivent satisfaire plusieurs types.</p>
+            <img [src]="imageUrl25">
+
+        </div>
+
+        <div class="concept">
+            <h2>Types utilitaires</h2>
+            <p>Ils simplifient la manipulation des objets en fonction de leurs propriétés afin de travailler avec des objets de manière flexible et sécurisée.</p>
+
+            <hr>
+            <h3>Partial :</h3>
+            <p>Rend toutes les propriétés d'un type optionnelles, pratique pour les objets où certaines informations peuvent être ajoutées ultérieurement.</p>
+            <img [src]="imageUrl22">
+
+            <hr>
+            <h3>Readonly :</h3>
+            <p>Rend toutes les propriétés en lecture seule, empêchant les modifications après initialisation.</p>
+            <img [src]="imageUrl23">
+            
+            <hr>
+            <h3>Pick :</h3>
+            <p> Crée un nouveau type avec un sous-ensemble des propriétés d'un type existant. Cela peut être utile pour ne sélectionner que les propriétés requises d'un objet.</p>
+            <img [src]="imageUrl24">
+
         </div>
 
         <div class="concept">
@@ -106,6 +160,36 @@
                 Les génériques permettent de créer des fonctions ou des classes qui peuvent fonctionner avec plusieurs types, sans être spécifiquement liés à un type en particulier rendant le code plus réutilisable.
             </p>
             <img [src]="imageUrl12">
+        </div>
+
+        <div class="concept">
+            <h2>Modules</h2>
+            <p>
+                Les modules permettent de structurer le code en le divisant en fichiers réutilisables. Dans Angular, chaque fichier TypeScript est un module par défaut, et les <strong>import/export </strong>permettent d'utiliser les fonctionnalités définies ailleurs.
+            </p>
+
+            <hr>
+            <h3>Export :</h3>
+            <img [src]="imageUrl16">
+
+            <hr>
+            <h3>Import :</h3>
+            <img [src]="imageUrl17">
+        </div>
+
+        <div class="concept">
+            <h2>Fonctions :</h2>
+            <p>
+                Les fonctions en TS acceptent des paramètres par défaut. De plus, Ts intègre aussi un mécanisme de fonctions fléchées.
+            </p>
+
+            <hr>
+            <h3>Fonctions :</h3>
+            <img [src]="imageUrl18">
+
+            <hr>
+            <h3>Fonctions anonymes :</h3>
+            <img [src]="imageUrl19">
         </div>
 
     </section>

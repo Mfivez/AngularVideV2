@@ -8,9 +8,9 @@ import { Component } from '@angular/core';
 export class UserProfileComponent {
   
   user = {
-    firstName: '',
-    lastName: '',
-    email: ''
+    firstName: 'dédé',
+    lastName: 'Théthé',
+    email: 'dédéThéthé@gmail.com'
   };
 
 }
