@@ -3,14 +3,16 @@ import { CommonModule } from '@angular/common';
 
 import { StoragesRoutingModule } from './storages-routing.module';
 import { StoragesComponent } from './storages.component';
-import { LoginComponent } from './components/login/login.component';
 import { FormsModule } from '@angular/forms';
+import { CorrectionLoginComponent } from './components/correction/login.component';
+import { StudentLoginComponent } from './components/student/login.component';
 
 
 @NgModule({
   declarations: [
     StoragesComponent,
-    LoginComponent
+    CorrectionLoginComponent,
+    StudentLoginComponent
   ],
   imports: [
     CommonModule,
@@ -19,7 +21,8 @@ import { FormsModule } from '@angular/forms';
   ],
   exports: [
     StoragesComponent,
-    LoginComponent
+    CorrectionLoginComponent,
+    StudentLoginComponent
   ]
 })
 export class StoragesModule { }

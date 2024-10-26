@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavigateService } from '../../theorie/shared/services/navigate.service';
-import { LoaderService } from './tools/loader.service';
+import { LoaderService } from './components/correction/tools/loader.service';
 
 @Component({
   selector: 'app-interceptor',

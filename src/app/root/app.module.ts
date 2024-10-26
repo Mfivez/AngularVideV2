@@ -6,8 +6,7 @@ import { AppComponent } from './app.component';
 import { LayoutModule } from '../layout/layout.module';
 import { HTTP_INTERCEPTORS, provideHttpClient } from '@angular/common/http';
 import { TokenInterceptor } from '../features/demos/demo16/tools/services/token.interceptor';
-import { AuthInterceptor } from '../features/exercices/interceptor/tools/auth.interceptor';
-
+import { AuthInterceptor } from '../features/exercices/interceptor/components/correction/tools/auth.interceptor';
 @NgModule({
   declarations: [
     AppComponent

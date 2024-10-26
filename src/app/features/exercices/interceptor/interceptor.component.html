@@ -18,13 +18,19 @@
       </div>
 
       <div class="concept">
+        <h2>Student</h2>
+      </div>
+
+      <div class="concept">
+        <h2>Correction</h2>
         @if (loaderService.isLoading()) {
           <div class="loader">Chargement</div>
         }
         @else () {
-          <app-pokemon/>
+          <correction-pokemon/>
         }
       </div>
+
     </section>
 
 

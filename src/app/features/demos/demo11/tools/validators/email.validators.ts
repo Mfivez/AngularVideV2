@@ -8,12 +8,12 @@ export function emailValidator (control: AbstractControl) {
 
 
         if (control.value.length <= 5) {
-            error = { name: 'Votre email doit contenir au moins 6 caractères' };
+            error = { email: 'Votre email doit contenir au moins 6 caractères' };
             return error;
         }
 
         if (!/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(control.value)) {
-            error = { name: 'Votre email ne respecte pas le format d\'un email.' };
+            error = { email: 'Votre email ne respecte pas le format d\'un email.' };
             return error;
         }
 
@@ -21,7 +21,7 @@ export function emailValidator (control: AbstractControl) {
     }
 
     else {
-        error = { name: 'Champ obligatoire' };
+        error = { email: 'Champ obligatoire' };
         return error;
     }
 

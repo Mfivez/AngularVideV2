@@ -2,7 +2,6 @@
     <h2>Formulaire avec Custom Validators</h2>
 
     <form [formGroup]="myForm">
-
         @for (field of formFields; track $index) {
             <div class="form-group">
                 <label [for]="field.controlName"><strong>{{ field.label }}:</strong></label>

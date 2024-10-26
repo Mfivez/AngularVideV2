@@ -8,9 +8,7 @@ import { PipesComponent } from './pipes/pipes.component';
 import { CyclesDeVieComponent } from './cycles-de-vie/cycles-de-vie.component';
 import { InputOutputComponent } from './input-output/input-output.component';
 import { ComponentsComponent } from './component-Exo/components.component';
-import { Exo1Component } from './component-Exo/components/exo1/exo1.component';
 import { CorrectionFormulaireSebComponent } from './correction-formulaire-seb/correction-formulaire-seb.component';
-import { ContactFormComponent } from './correction-formulaire-seb/components/contact-form/contact-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterGuardResolverModule } from './router-guard-resolver/router-guard-resolver.module';
 import { ServiceInjectionComponent } from './service-injection/service-injection.component';
@@ -18,45 +16,80 @@ import { InterceptorComponent } from './interceptor/interceptor.component';
 import { StoragesModule } from './storages/storages.module';
 import { ObservablesModule } from './observables/observables.module';
 import { HttpClientModule } from './http-client/http-client.module';
-import { PokemonComponent } from './interceptor/components/pokemon/pokemon.component';
 import { RoutingComponent } from './routing/routing.component';
-import { UserProfileComponent } from './binding/components/user-profile/user-profile.component';
-import { ListViewComponent } from './directives/components/list-view/list-view.component';
-import { ChronoComponent } from './pipes/components/chrono/chrono.component';
-import { TimerComponent } from './cycles-de-vie/components/timer/timer.component';
-import { AddItemComponent } from './input-output/components/add-item/add-item.component';
-import { ItemListComponent } from './input-output/components/item-list/item-list.component';
-import { ShoppingViewComponent } from './input-output/components/shopping-view/shopping-view.component';
-import { AddComponent } from './service-injection/components/add-item/add-item.component';
-import { ListComponent } from './service-injection/components/item-list/item-list.component';
-import { ShoppingComponent } from './service-injection/components/shopping-view/shopping-view.component';
+import { CorrectionUserProfileComponent } from './binding/components/correction/user-profile/user-profile.component';
+import { StudentUserProfileComponent } from './binding/components/student/user-profile/user-profile.component';
+import { StudentContactFormComponent } from './correction-formulaire-seb/components/student/contact-form.component';
+import { CorrectionContactFormComponent } from './correction-formulaire-seb/components/correction/contact-form.component';
+import { StudentTimerComponent } from './cycles-de-vie/components/student/timer.component';
+import { CorrectionTimerComponent } from './cycles-de-vie/components/correction/timer.component';
+import { StudentListViewComponent } from './directives/components/student/list-view.component';
+import { CorrectionListViewComponent } from './directives/components/correction/list-view.component';
+import { CorrectionAddItemComponent } from './input-output/components/correction/add-item/add-item.component';
+import { CorrectionItemListComponent } from './input-output/components/correction/item-list/item-list.component';
+import { CorrectionShoppingViewComponent } from './input-output/components/correction/shopping-view/shopping-view.component';
+import { StudentAddItemComponent } from './input-output/components/student/add-item/add-item.component';
+import { StudentItemListComponent } from './input-output/components/student/item-list/item-list.component';
+import { StudentShoppingViewComponent } from './input-output/components/student/shopping-view/shopping-view.component';
+import { CorrectionPokemonComponent } from './interceptor/components/correction/pokemon.component';
+import { StudentPokemonComponent } from './interceptor/components/student/pokemon.component';
+import { StudentChronoComponent } from './pipes/components/student/chrono.component';
+import { CorrectionChronoComponent } from './pipes/components/correction/chrono.component';
+import { CorrectionAddComponent } from './service-injection/components/correction/add-item/add-item.component';
+import { CorrectionListComponent } from './service-injection/components/correction/item-list/item-list.component';
+import { CorrectionShoppingComponent } from './service-injection/components/correction/shopping-view/shopping-view.component';
+import { StudentAddComponent } from './service-injection/components/student/add-item/add-item.component';
+import { StudentListComponent } from './service-injection/components/student/item-list/item-list.component';
+import { StudentShoppingComponent } from './service-injection/components/student/shopping-view/shopping-view.component';
+
 
 
 @NgModule({
   declarations: [
-    DirectivesComponent,
-    BindingComponent,
     PipesComponent,
-    CyclesDeVieComponent,
+    StudentChronoComponent,
+    CorrectionChronoComponent,
+
     InputOutputComponent,
     ComponentsComponent,
-    Exo1Component,
-    CorrectionFormulaireSebComponent,
-    ContactFormComponent,
+
     ServiceInjectionComponent,
-    InterceptorComponent,
-    PokemonComponent,
+    CorrectionAddComponent,
+    CorrectionListComponent,
+    CorrectionShoppingComponent,
+    StudentAddComponent,
+    StudentListComponent,
+    StudentShoppingComponent,
+
     RoutingComponent,
-    UserProfileComponent,
-    ListViewComponent,
-    ChronoComponent,
-    TimerComponent,
-    AddItemComponent,
-    ItemListComponent,
-    ShoppingViewComponent,
-    AddComponent,
-    ListComponent,
-    ShoppingComponent
+
+    InterceptorComponent,
+    CorrectionPokemonComponent,
+    StudentPokemonComponent,
+
+    InputOutputComponent,
+    CorrectionAddItemComponent,
+    CorrectionItemListComponent,
+    CorrectionShoppingViewComponent,
+    StudentAddItemComponent,
+    StudentItemListComponent,
+    StudentShoppingViewComponent,
+
+    DirectivesComponent,
+    StudentListViewComponent,
+    CorrectionListViewComponent,
+
+    CyclesDeVieComponent,
+    StudentTimerComponent,
+    CorrectionTimerComponent,
+
+    BindingComponent,
+    CorrectionUserProfileComponent,
+    StudentUserProfileComponent,
+
+    CorrectionFormulaireSebComponent,
+    CorrectionContactFormComponent,
+    StudentContactFormComponent,
   ],
   imports: [
     CommonModule,

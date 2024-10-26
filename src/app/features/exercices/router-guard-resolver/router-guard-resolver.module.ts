@@ -3,17 +3,22 @@ import { CommonModule } from '@angular/common';
 
 import { RouterGuardResolverRoutingModule } from './router-guard-resolver-routing.module';
 import { RouterGuardResolverComponent } from './router-guard-resolver.component';
-import { ExerciceComponent } from './components/exercice/exercice.component';
-import { LoginComponent } from './components/exercice/login/login.component';
-import { UserComponent } from './components/exercice/user/user.component';
-
+import { CorrectionExerciceComponent } from './components/correction/exercice.component';
+import { CorrectionLoginComponent } from './components/correction/login/login.component';
+import { CorrectionUserComponent } from './components/correction/user/user.component';
+import { StudentExerciceComponent } from './components/student/exercice.component';
+import { StudentLoginComponent } from './components/student/login/login.component';
+import { StudentUserComponent } from './components/student/user/user.component';
 
 @NgModule({
   declarations: [
     RouterGuardResolverComponent,
-    ExerciceComponent,
-    LoginComponent,
-    UserComponent
+    CorrectionExerciceComponent,
+    CorrectionLoginComponent,
+    CorrectionUserComponent,
+    StudentExerciceComponent,
+    StudentLoginComponent,
+    StudentUserComponent
   ],
   imports: [
     CommonModule,

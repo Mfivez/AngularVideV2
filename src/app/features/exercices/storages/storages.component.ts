@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NavigateService } from '../../theorie/shared/services/navigate.service';
-import { StorageService } from './tools/storage.service';
 import { Router } from '@angular/router';
+import { CorrectionStorageService } from './components/correction/tools/storage.service';
 
 @Component({
   selector: 'app-storages',
@@ -12,7 +12,7 @@ export class StoragesComponent{
   pseudo: string | null = null;
   welcomeMessage: string | null = null;
 
-  constructor(public readonly nav: NavigateService, private readonly storage: StorageService, private readonly router: Router) {} 
+  constructor(public readonly nav: NavigateService, private readonly storage: CorrectionStorageService, private readonly router: Router) {} 
 
   ngOnInit(): void {
     this.pseudo = this.storage.getUserPseudo()
