@@ -316,13 +316,23 @@ input[type="number"] {
   }
 }
 
+/* Style pour les boutons radio */
+input[type="radio"] {
+  height: 20px; 
+  border: 2px solid $secondary-color; 
+  cursor: pointer; 
+  margin-right: -7rem; 
+}
+
+
+
 input[type="checkbox"] {
   appearance: none;
   width: 20px;
   height: 20px;
   border: 2px solid $secondary-color;
   border-radius: 4px;
-  position: relative;
+
   margin-right: 0.5rem;
   cursor: pointer;
   transition: background-color 0.3s ease, border-color 0.3s ease;
