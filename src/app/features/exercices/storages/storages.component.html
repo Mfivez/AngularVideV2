@@ -35,15 +35,4 @@
 
         <div class="concept">
             <h2>Correction : </h2>
-            @if (pseudo) {
-                <h3>Bonjour {{ pseudo }} !</h3>
-                @if (welcomeMessage) {
-                    <p> {{ welcomeMessage }}</p>
-                }
-                <button class="cta-button" (click)="logout()">🟥 Se déconnecter</button>
-            }
-
-            @if (!pseudo) {
-                <p class="warning">Vous n'êtes pas connecté, veuillez-vous  <a (click)="nav.navigate('/exos/11/login')">identifier</a> ❗</p>
-            }
         </div>

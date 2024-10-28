@@ -1,18 +1,3 @@
 <div class="concept">
     <h2>Correction - Page d'Accueil</h2>
-
-    <p>Cliquez sur un utilisateur pour voir son profil.</p>
-    <ul>
-      <li><a (click)="nav.navigate('exos/10/user/1')">Utilisateur 1</a></li>
-      <li><a (click)="nav.navigate('exos/10/user/2')">Utilisateur 2</a></li>
-      <li><a (click)="nav.navigate('exos/10/user/3')">Utilisateur 3</a></li>
-    </ul>
-
-    @if (auth.isAuthenticated()) {
-        <button class="cta-button" (click)="auth.logout()">🟥 Déconnexion</button>
-    } @else {
-        <button class="cta-button" (click)="auth.login()">🟩 Connexion</button>
-    }
-
-
 </div>
