@@ -76,6 +76,15 @@ export class ViewComponent {
       placeholder: 'Entrez vos loisirs', 
       isArray: true,
       required: false
+    },
+    {
+      controlName: 'test', 
+      label: 'Test', 
+      type: FormFieldType.TEXT, 
+      placeholder: 'Entrez', 
+      isArray: true,
+      required: false
     }
+
   ];
 }
