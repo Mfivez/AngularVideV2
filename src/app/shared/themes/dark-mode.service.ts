@@ -1,14 +1,19 @@
 import { Injectable } from '@angular/core';
+import { LocalStorageService } from '../../features/demos/demo13/tools/local-storage.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ThemeService {
-  private isDarkTheme = true;
+  private isDarkTheme;
 
+  constructor(private readonly localService: LocalStorageService) {
+    this.isDarkTheme = this.localService.getItem("isDarkTheme")
+  }
 
   setTheme(isDarkTheme: boolean) {
     this.isDarkTheme = isDarkTheme
+    this.localService.setItem("isDarkTheme", this.isDarkTheme)
     if (isDarkTheme) {
       document.body.classList.remove('light-theme')
       document.body.classList.add("dark-theme")
@@ -19,6 +24,6 @@ export class ThemeService {
   }
 
   getIsDarkTheme(): boolean {
-    return this.isDarkTheme
+    return this.localService.getItem("isDarkTheme")
   }
 }

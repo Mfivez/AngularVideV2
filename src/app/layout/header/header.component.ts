@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { HeaderService } from './tools/header.service';
 import { MenuItem } from './tools/menu-item.models';
-import { ThemeService } from '../../shared/services/dark-mode.service';
+import { ThemeService } from '../../shared/themes/dark-mode.service';
 
 @Component({
   selector: 'app-header',
@@ -14,11 +14,11 @@ export class HeaderComponent {
   ExoMenuItems: MenuItem[] = [];
   TheoMenuItems: MenuItem[] = [];
   TsMenuItems: MenuItem[] = [];
-  isDarkTheme: boolean = false;
+  isDarkTheme: boolean
 
   constructor(private headerService: HeaderService, private themeService: ThemeService) {
     this.isDarkTheme = this.themeService.getIsDarkTheme()
-    this.toggleTheme()
+    this.themeService.setTheme(this.isDarkTheme)
   }
 
   ngOnInit(): void {
